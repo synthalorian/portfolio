@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>synth — game engines, audio tools &amp; AI agent tooling</title>
+  <meta name="description" content="Portfolio of synth (synthalorian): open-source game engines, synthesizers and audio tools, AI agent tooling, security utilities, and offline-first apps. Founder of Blackshield Company.">
+  <meta name="author" content="synth">
+  <meta name="theme-color" content="#101014">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://synthalorian.pages.dev/">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="synth">
+  <meta property="og:title" content="synth — game engines, audio tools &amp; AI agent tooling">
+  <meta property="og:description" content="Open-source game engines, synthesizers and audio tools, AI agent tooling, and offline-first apps. Founder of Blackshield Company.">
+  <meta property="og:url" content="https://synthalorian.pages.dev/">
+  <meta property="og:image" content="https://synthalorian.pages.dev/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="synth — Guts. Steel. Code. Portfolio card with a black knight bearing a red-cross shield.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="synth — game engines, audio tools &amp; AI agent tooling">
+  <meta name="twitter:description" content="Open-source game engines, synthesizers and audio tools, AI agent tooling, and offline-first apps.">
+  <meta name="twitter:image" content="https://synthalorian.pages.dev/assets/img/og-image.jpg">
+
+  <link rel="preload" href="/assets/fonts/cinzel-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "synth",
+    "alternateName": "synthalorian",
+    "url": "https://synthalorian.pages.dev/",
+    "image": "https://synthalorian.pages.dev/assets/img/synth-knight.jpg",
+    "email": "mailto:synthalorian@gmail.com",
+    "homeLocation": { "@type": "Place", "name": "Florida" },
+    "jobTitle": "Software developer",
+    "worksFor": { "@type": "Organization", "name": "Blackshield Company", "url": "https://github.com/Blackshield-Company" },
+    "sameAs": [
+      "https://github.com/synthalorian",
+      "https://github.com/Blackshield-Company",
+      "https://synthalorian.github.io/"
+    ],
+    "knowsAbout": ["Rust", "C++", "Flutter", "Game engines", "Audio DSP", "AI agents", "Digital forensics"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Reusable shield mark -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <clipPath id="shield-inner"><path d="M32 6 54 11.5V30c0 13.6-8.7 22.6-22 27.6C18.7 52.6 10 43.6 10 30V11.5Z"/></clipPath>
+      <symbol id="mark" viewBox="0 0 64 64">
+        <path d="M32 3 57 9.2V30c0 15.4-10 25.7-25 31.2C17 55.7 7 45.4 7 30V9.2Z" fill="#101014" stroke="#8F959C" stroke-width="3"/>
+        <g clip-path="url(#shield-inner)" fill="#C1121F"><rect x="28" y="6" width="8" height="54"/><rect x="10" y="22" width="44" height="8"/></g>
+        <g fill="#8F959C"><path d="M48.7 30.7 43.6 39.2 36.2 45.7 41.3 37.2Z"/><path d="M51.5 33.0 46.4 41.5 39.0 48.0 44.1 39.5Z"/><path d="M54.3 35.3 49.2 43.8 41.8 50.3 46.9 41.8Z"/></g>
+      </symbol>
+      <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M3 5.5h18v13H3z"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="m3.5 6 8.5 7 8.5-7"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 2.5 20 4.6V11c0 5-3.3 8.5-8 10.5C7.3 19.5 4 16 4 11V4.6Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 7v10M8 10.5h8"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3Z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M5 12h13M13 6l6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="synth — back to top">
+        <svg aria-hidden="true"><use href="#mark"/></svg>
+        <span>synth</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-motto">Guts <b>/</b> Steel <b>/</b> Code</p>
+          <h1 id="hero-title">synth<span class="dot" aria-hidden="true">.</span></h1>
+          <ul class="hero-handle">
+            <li>@synthalorian</li>
+            <li>Florida</li>
+            <li>Founder, Blackshield Company</li>
+          </ul>
+          <p class="hero-lede">I build <strong>game engines</strong>, <strong>synthesizers and audio tools</strong>, and <strong>AI agent tooling</strong> — in the open, with Rust, C++, Odin, and Flutter.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">View the work <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="https://github.com/synthalorian"><svg aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
+            <a class="btn btn-ghost" href="mailto:synthalorian@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg> Email</a>
+          </div>
+          <dl class="hero-stats">
+            <div><dt>Public repos</dt><dd>100+</dd></div>
+            <div><dt>Languages</dt><dd>15+</dd></div>
+            <div><dt>Focus areas</dt><dd>6</dd></div>
+          </dl>
+        </div>
+        <div class="hero-portrait">
+          <span class="portrait-corner tr" aria-hidden="true"></span>
+          <span class="portrait-corner bl" aria-hidden="true"></span>
+          <div class="portrait-frame">
+            <picture>
+              <source srcset="/assets/img/synth-knight.webp" type="image/webp">
+              <img src="/assets/img/synth-knight.jpg" width="460" height="460" alt="synth's avatar: a painted black-armored knight carrying a sword and a dark shield with a red cross, a burning city behind him." fetchpriority="high">
+            </picture>
+          </div>
+          <span class="portrait-tag">The shield holds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== ABOUT ============================== -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow"><span class="num">01</span> About</p>
+            <h2 id="about-title">Steel over spectacle</h2>
+          </div>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>I'm <strong>synth</strong> (<a href="https://github.com/synthalorian">synthalorian</a> on GitHub), a developer based in Florida and the founder of <a href="https://github.com/Blackshield-Company">Blackshield Company</a> — an organization for digital forensics, security tooling, an AI platform, and the Blackshield theme family.</p>
+            <p>My work runs from low-level engines to finished apps: a hot-reloading game engine in Odin, a JUCE synthesizer with VST3 and CLAP builds, a Rust AI coding harness with persistent memory, mesh-networking tools for Reticulum, and offline-first Flutter apps for Android and iOS. Much of it is local-first by design — your data stays on your machine.</p>
+            <p>Off the keyboard, I play guitar on a praise team — which is where projects like <a href="https://github.com/synthalorian/setlist">Setlist</a> and <a href="https://github.com/synthalorian/Open-Praise">Open Praise</a> come from.</p>
+            <p><strong>Open to collaborators and new roles</strong> in game tech, audio software, AI developer tooling, and security. If something here overlaps with what you're building, <a href="#contact">get in touch</a>.</p>
+          </div>
+          <ul class="focus-list reveal">
+            <li><span class="fi">/01</span><h3>Game engines &amp; games</h3><p>VoidEngine (Odin + SDL2), Chronos Engine (Rust ECS), emulators, renderers.</p></li>
+            <li><span class="fi">/02</span><h3>Audio &amp; DSP</h3><p>Open Synth, Open Amp, Kicks, a Zig tracker, STM32 synth firmware.</p></li>
+            <li><span class="fi">/03</span><h3>AI agent tooling</h3><p>OpenShield, Hermes Wingman, OpenClaw Pincers, AgentBench.</p></li>
+            <li><span class="fi">/04</span><h3>Security &amp; forensics</h3><p>wireclaw, chain-of-custody and evidence tooling under Blackshield Company.</p></li>
+            <li><span class="fi">/05</span><h3>Mesh &amp; local-first networking</h3><p>Reticulum nodes, clients, and deployment tooling; LAN-only sync.</p></li>
+            <li><span class="fi">/06</span><h3>Offline-first apps</h3><p>Flutter apps for Bible study, fitness, budgeting, health, and more.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== WORK ============================== -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow"><span class="num">02</span> Selected work</p>
+            <h2 id="work-title">Featured projects</h2>
+          </div>
+          <p>Six projects I'd point a collaborator to first. Every card links straight to the source.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card panel reveal" id="project-openshield" aria-labelledby="p1">
+            <div class="card-top"><span class="card-index">01</span><span class="card-kind">AI agent tooling</span></div>
+            <h3 id="p1"><a href="https://github.com/Blackshield-Company/openshield">OpenShield</a></h3>
+            <p class="card-repo">Blackshield-Company/openshield</p>
+            <p class="card-desc">An open-source AI coding agent harness for the terminal, written in Rust.</p>
+            <ul class="card-points">
+              <li>Persistent SQLite-backed memory with keyword and semantic search</li>
+              <li>Works with any OpenAI-compatible provider — hosted or local</li>
+              <li>Autonomous plan → execute → verify mode, plus desktop and Android companions</li>
+            </ul>
+            <ul class="tags"><li>Rust</li><li>TUI</li><li>LLM</li><li>SQLite</li></ul>
+            <div class="card-foot">
+              <p class="card-meta"><span class="lang">Rust</span><span>★ 8</span><span>Sep 2026</span></p>
+              <div class="card-links"><a href="https://github.com/Blackshield-Company/openshield" aria-label="OpenShield source on GitHub">Source <span aria-hidden="true">→</span></a></div>
+            </div>
+          </article>
+
+          <article class="card panel reveal" id="project-voidengine" aria-labelledby="p2">
+            <div class="card-top"><span class="card-index">02</span><span class="card-kind">Game engine</span></div>
+            <h3 id="p2"><a href="https://github.com/synthalorian/voidengine">VoidEngine</a></h3>
+            <p class="card-repo">synthalorian/voidengine</p>
+            <p class="card-desc">A lightweight game engine with hot-reload and data-driven design, built in Odin on SDL2.</p>
+            <ul class="card-points">
+              <li>Hot-reloads game logic as a shared library — no engine restart</li>
+              <li>ECS, 2D physics, audio, tilemaps, particles, fixed 60&nbsp;Hz timestep</li>
+              <li>3D sprite renderer with OpenGL 3.3 and Vulkan backends</li>
+            </ul>
+            <ul class="tags"><li>Odin</li><li>SDL2</li><li>OpenGL</li><li>Vulkan</li></ul>
+            <div class="card-foot">
+              <p class="card-meta"><span class="lang">Odin</span><span>★ 2</span><span>Sep 2026</span></p>
+              <div class="card-links"><a href="https://github.com/synthalorian/voidengine" aria-label="VoidEngine source on GitHub">Source <span aria-hidden="true">→</span></a></div>
+            </div>
+          </article>
+
+          <article class="card panel reveal" id="project-open-synth" aria-labelledby="p3">
+            <div class="card-top"><span class="card-index">03</span><span class="card-kind">Audio · DSP</span></div>
+            <h3 id="p3"><a href="https://github.com/synthalorian/open-synth">Open Synth</a></h3>
+            <p class="card-repo">synthalorian/open-synth</p>
+            <p class="card-desc">A free, open-source synthesizer on a JUCE 8 / C++20 engine — standalone, VST3, and CLAP.</p>
+            <ul class="card-points">
+              <li>Dual oscillators with wavetable, FM, and physical-modeling modes</li>
+              <li>16-part multitimbral engine with a full multi-effects chain</li>
+              <li>Sample ROMpler with 5,600 presets</li>
+            </ul>
+            <ul class="tags"><li>C++20</li><li>JUCE 8</li><li>VST3</li><li>CLAP</li></ul>
+            <div class="card-foot">
+              <p class="card-meta"><span class="lang">C++</span><span>★ 6</span><span>v2.0.2</span></p>
+              <div class="card-links">
+                <a href="https://github.com/synthalorian/open-synth/releases/tag/v2.0.2" aria-label="Open Synth latest release">Release <span aria-hidden="true">→</span></a>
+                <a href="https://github.com/synthalorian/open-synth" aria-label="Open Synth source on GitHub">Source <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel reveal" id="project-wireclaw" aria-labelledby="p4">
+            <div class="card-top"><span class="card-index">04</span><span class="card-kind">Developer tooling</span></div>
+            <h3 id="p4"><a href="https://github.com/Blackshield-Company/wireclaw">wireclaw</a></h3>
+            <p class="card-repo">Blackshield-Company/wireclaw</p>
+            <p class="card-desc">A local HTTP/HTTPS proxy that captures, replays, and inspects API traffic. Rust CLI + TUI.</p>
+            <ul class="card-points">
+              <li>Logs every request and response to SQLite, organized by session</li>
+              <li>Generates OpenAPI 3.0 specs from live traffic</li>
+              <li>Replay, JSON-aware diff, latency percentiles, real-time dashboard</li>
+            </ul>
+            <ul class="tags"><li>Rust</li><li>ratatui</li><li>SQLite</li><li>OpenAPI</li></ul>
+            <div class="card-foot">
+              <p class="card-meta"><span class="lang">Rust</span><span>★ 3</span><span>Sep 2026</span></p>
+              <div class="card-links"><a href="https://github.com/Blackshield-Company/wireclaw" aria-label="wireclaw source on GitHub">Source <span aria-hidden="true">→</span></a></div>
+            </div>
+          </article>
+
+          <article class="card panel reveal" id="project-open-bible" aria-labelledby="p5">
+            <div class="card-top"><span class="card-index">05</span><span class="card-kind">Mobile app</span></div>
+            <h3 id="p5"><a href="https://github.com/synthalorian/Open-Bible">Open Bible</a></h3>
+            <p class="card-repo">synthalorian/Open-Bible</p>
+            <p class="card-desc">An offline Bible study app for Android and iOS, built with Flutter.</p>
+            <ul class="card-points">
+              <li>20+ bundled translations with full-text search — no connection needed</li>
+              <li>Strong's concordance and side-by-side translation comparison</li>
+              <li>Text-to-speech, reading plans, notes, and highlights</li>
+            </ul>
+            <ul class="tags"><li>Flutter</li><li>Dart</li><li>Android</li><li>iOS</li></ul>
+            <div class="card-foot">
+              <p class="card-meta"><span class="lang">Dart</span><span>★ 2</span><span>v1.4.0</span></p>
+              <div class="card-links">
+                <a href="https://github.com/synthalorian/Open-Bible/releases/tag/v1.4.0" aria-label="Open Bible latest release">Release <span aria-hidden="true">→</span></a>
+                <a href="https://github.com/synthalorian/Open-Bible" aria-label="Open Bible source on GitHub">Source <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel reveal" id="project-open-psalm" aria-labelledby="p6">
+            <div class="card-top"><span class="card-index">06</span><span class="card-kind">Terminal app</span></div>
+            <h3 id="p6"><a href="https://github.com/synthalorian/open-psalm">Open Psalm</a></h3>
+            <p class="card-repo">synthalorian/open-psalm</p>
+            <p class="card-desc">A fast, keyboard-driven Bible reader for the terminal. C++20 + FTXUI.</p>
+            <ul class="card-points">
+              <li>10 translations with FTS5 full-text search and parallel view</li>
+              <li>Strong's concordance, cross-references, reading plans</li>
+              <li>Vim-style navigation and 11 built-in themes</li>
+            </ul>
+            <ul class="tags"><li>C++20</li><li>FTXUI</li><li>SQLite FTS5</li></ul>
+            <div class="card-foot">
+              <p class="card-meta"><span class="lang">C++</span><span>★ 1</span><span>v0.2.0</span></p>
+              <div class="card-links">
+                <a href="https://github.com/synthalorian/open-psalm/releases/tag/v0.2.0" aria-label="Open Psalm latest release">Release <span aria-hidden="true">→</span></a>
+                <a href="https://github.com/synthalorian/open-psalm" aria-label="Open Psalm source on GitHub">Source <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="more-head reveal" id="more-work">
+          <h3>More work</h3>
+          <div class="more-head-r">
+            <p>102 more public repositories, grouped by area.</p>
+            <button class="more-toggle" type="button" hidden>Expand all</button>
+          </div>
+        </div>
+        <div class="work-groups">
+        <details class="work-group" id="more-ai-agent-tooling" open>
+          <summary><span class="wg-title">AI &amp; agent tooling</span><span class="wg-count">16</span></summary>
+          <ul class="work-list">
+            <li><a href="https://github.com/synthalorian/hermes-wingman">hermes-wingman</a><span class="w-desc">Full GUI for Hermes Agent — Flutter desktop and mobile apps plus a Rails 8 web dashboard on a Rust backend. Replaces the Hermes CLI.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/openclaw-pincers">openclaw-pincers</a><span class="w-desc">Cross-platform desktop control center for the OpenClaw gateway. Tauri 2 + Svelte 5 + Rust.</span><span class="w-lang">Svelte</span></li>
+            <li><a href="https://github.com/synthalorian/agentbench">agentbench</a><span class="w-desc">Open-source, self-hostable benchmark runner for AI coding agents. Pluggable harnesses, TUI + web dashboard. Rust.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/Blackshield-Company/openshield-desktop">openshield-desktop</a><span class="w-desc">GUI companion for the OpenShield AI harness. Sessions, streaming chat, tool approvals, swarm monitor. Tauri 2 + SvelteKit 2.</span><span class="w-lang">TypeScript</span></li>
+            <li><a href="https://github.com/Blackshield-Company/openshield-mobile">openshield-mobile</a><span class="w-desc">Android companion for OpenShield — pairs with openshield serve over LAN for chat, approvals, and swarm monitoring.</span><span class="w-lang">Kotlin</span></li>
+            <li><a href="https://github.com/Blackshield-Company/sentryclaw">sentryclaw</a><span class="w-desc">Self-hosted AI code review bot. No cloud, no API keys. Rust + Axum + local LLMs.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/Blackshield-Company/ghostbin">ghostbin</a><span class="w-desc">AI-powered reverse engineering suite. Rust + Capstone + Iced-x86 + LLM analysis.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/Janus">Janus</a><span class="w-desc">AI-first communication platform with knowledge graph, bot orchestration, and multi-platform clients.</span><span class="w-lang">TypeScript</span></li>
+            <li><a href="https://github.com/synthalorian/clawtrade">clawtrade</a><span class="w-desc">AI-powered micro-SaaS marketplace where Hermes agents autonomously create, sell, and buy services.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/memoryloom">memoryloom</a><span class="w-desc">Local transcript indexing and literal search for agent memory.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/personaforge">personaforge</a><span class="w-desc">Lint, score, and render durable AI personas from plain text.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/toolsmith">toolsmith</a><span class="w-desc">Contract files for agent tools, validated before runtime.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/signalbridge">signalbridge</a><span class="w-desc">Tamper-evident local envelopes for agent-to-agent handoffs.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/hermes-gemini-setup-guide">hermes-gemini-setup-guide</a><span class="w-desc">Step-by-step guide for adding Google Gemini OAuth support to Hermes agent. Includes Cloud Code Assist free tier and thoughtSignature replay fix.</span><span class="w-lang">Shell</span></li>
+            <li><a href="https://github.com/synthalorian/claw-code-gemini-setup-guide">claw-code-gemini-setup-guide</a><span class="w-desc">Step-by-step guide for wiring claw-code to Google Gemini via Cloud Code Assist API. Includes OAuth setup and thoughtSignature replay fix.</span><span class="w-lang">Shell</span></li>
+            <li><a href="https://github.com/synthalorian/openclaw-gemini-setup-guide">openclaw-gemini-setup-guide</a><span class="w-desc">Step-by-step guide for wiring OpenClaw to Google Gemini 2.5 Flash. Covers configuration, gemini-proxy plugin, and provider fallback chains.</span></li>
+          </ul>
+        </details>
+        <details class="work-group" id="more-game-engines-games-graphics" open>
+          <summary><span class="wg-title">Game engines, games &amp; graphics</span><span class="wg-count">10</span></summary>
+          <ul class="work-list">
+            <li><a href="https://github.com/synthalorian/chronos-engine">chronos-engine</a><span class="w-desc">A genre-agnostic ECS game engine in Rust. Zero dependencies (core). Deterministic by design.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/rift">rift</a><span class="w-desc">Cross-engine game asset pipeline manager — Rust CLI + Rails 8 dashboard.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/retro-spec">retro-spec</a><span class="w-desc">3D city generator that renders your Git history as a neon metropolis. Rust + Bevy.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/raytracer">raytracer</a><span class="w-desc">CPU path tracer from scratch in C++17. Diffuse, metal, dielectric materials. No GPU, just math.</span><span class="w-lang">C++</span></li>
+            <li><a href="https://github.com/synthalorian/chip8-emu">chip8-emu</a><span class="w-desc">A complete CHIP-8 emulator in C with SDL2. 35 opcodes, display, audio, and keypad input.</span><span class="w-lang">C</span></li>
+            <li><a href="https://github.com/synthalorian/roguelike">roguelike</a><span class="w-desc">Traditional ASCII roguelike. Procedural dungeons, permadeath, FOV, turn-based combat in the terminal.</span><span class="w-lang">C</span></li>
+            <li><a href="https://github.com/synthalorian/chess-engine">chess-engine</a><span class="w-desc">UCI-compatible chess engine with bitboards, alpha-beta search, and move generation in C++.</span><span class="w-lang">C++</span></li>
+            <li><a href="https://github.com/synthalorian/particle-life">particle-life</a><span class="w-desc">5-species particle life simulation with emergent behaviors. Python + pygame + Numba.</span><span class="w-lang">Python</span></li>
+            <li><a href="https://github.com/synthalorian/github-graveyard">github-graveyard</a><span class="w-desc">A 3D interactive cemetery where forgotten GitHub repositories rest.</span><span class="w-lang">JavaScript</span></li>
+            <li><a href="https://github.com/synthalorian/esolang">esolang</a><span class="w-desc">JUMP — an esoteric language where the instruction pointer moves like a chess knight. 2D grid, stack-based.</span><span class="w-lang">Rust</span></li>
+          </ul>
+        </details>
+        <details class="work-group" id="more-audio-music-dsp" open>
+          <summary><span class="wg-title">Audio, music &amp; DSP</span><span class="wg-count">10</span></summary>
+          <ul class="work-list">
+            <li><a href="https://github.com/synthalorian/Open-Amp">Open-Amp</a><span class="w-desc">Cross-platform guitar amplifier and effects processor with real-time DSP — Linux, Android, iOS.</span><span class="w-lang">C++</span></li>
+            <li><a href="https://github.com/synthalorian/kicks">kicks</a><span class="w-desc">Guitar and bass amp simulator and effects workstation with native DSP, IR loading, and NAM model support. Rust + Tauri 2 + React.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/gridtracker">gridtracker</a><span class="w-desc">Terminal music tracker with real-time synthesis. Zig + PortAudio + PortMidi.</span><span class="w-lang">Zig</span></li>
+            <li><a href="https://github.com/synthalorian/voltshark">voltshark</a><span class="w-desc">Polyphonic synthesizer firmware for STM32F4. Rust + embedded-hal + I2S audio.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/tapeloop">tapeloop</a><span class="w-desc">Browser-based Web Audio synthesizer and pattern sequencer.</span><span class="w-lang">HTML</span></li>
+            <li><a href="https://github.com/synthalorian/tracking">tracking</a><span class="w-desc">Real-time audio spectrum analyzer with waterfall displays, peak detection, and MIDI/CV export. Julia.</span><span class="w-lang">Julia</span></li>
+            <li><a href="https://github.com/synthalorian/nightdrive">nightdrive</a><span class="w-desc">Subsonic-compatible music server with transcoding, album art, and web player.</span><span class="w-lang">Go</span></li>
+            <li><a href="https://github.com/synthalorian/neoncast">neoncast</a><span class="w-desc">Self-hosted podcast hosting + RSS generator with built-in analytics, chapter markers, and WebSub. Go.</span><span class="w-lang">Go</span></li>
+            <li><a href="https://github.com/synthalorian/setlist">setlist</a><span class="w-desc">Praise team command center: build setlists, manage chord charts, transpose keys in one tap.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/Open-Praise">Open-Praise</a><span class="w-desc">Setlist and chord sheet manager for worship teams.</span><span class="w-lang">Dart</span></li>
+          </ul>
+        </details>
+        <details class="work-group" id="more-security-digital-forensics" open>
+          <summary><span class="wg-title">Security &amp; digital forensics</span><span class="wg-count">8</span></summary>
+          <ul class="work-list">
+            <li><a href="https://github.com/Blackshield-Company/custody">custody</a><span class="w-desc">Tamper-evident chain-of-custody log for digital evidence.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/Blackshield-Company/timeline">timeline</a><span class="w-desc">Evidence timeline builder for investigators and defense attorneys.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/Blackshield-Company/exifguard">exifguard</a><span class="w-desc">Batch forensic EXIF verifier for evidence photos.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/Blackshield-Company/beacon">beacon</a><span class="w-desc">Interactive cybercrime evidence-preservation and reporting guide for victims.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/Blackshield-Company/blotter">blotter</a><span class="w-desc">Normalizer and explorer for public crime/incident data.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/Blackshield-Company/docket">docket</a><span class="w-desc">Local-first case file organizer for public defenders.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/Blackshield-Company/scamshield">scamshield</a><span class="w-desc">Offline scam pattern detector protecting elderly users and families.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/Blackshield-Company/loopback">loopback</a><span class="w-desc">Self-hosted webhook testing tunnel with replay, inspection, programmable transformations, and chaos mode. Elixir.</span><span class="w-lang">Elixir</span></li>
+          </ul>
+        </details>
+        <details class="work-group" id="more-mesh-local-first-networking" open>
+          <summary><span class="wg-title">Mesh &amp; local-first networking</span><span class="wg-count">8</span></summary>
+          <ul class="work-list">
+            <li><a href="https://github.com/synthalorian/reticulum-hub">reticulum-hub</a><span class="w-desc">Web dashboard and management platform for Reticulum networks.</span><span class="w-lang">HTML</span></li>
+            <li><a href="https://github.com/synthalorian/reticulum-link">reticulum-link</a><span class="w-desc">High-performance Reticulum transport node and LXMF relay — built on the BEAM.</span><span class="w-lang">Elixir</span></li>
+            <li><a href="https://github.com/synthalorian/reticulum-wave">reticulum-wave</a><span class="w-desc">Cross-platform encrypted mesh messaging client for Reticulum/LXMF.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/reticulum-forge">reticulum-forge</a><span class="w-desc">CLI toolkit for building, testing, and deploying Reticulum mesh networks — like terraform for mesh.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/reticulum-beacon">reticulum-beacon</a><span class="w-desc">Personal Reticulum transport node and service hub — one command to join the mesh.</span><span class="w-lang">Python</span></li>
+            <li><a href="https://github.com/synthalorian/reticulumchat">reticulumchat</a><span class="w-desc">TUI chat client over Reticulum mesh network with voice and file sharing.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/Open-Grid">Open-Grid</a><span class="w-desc">Decentralized mesh network toolkit. Discover devices, send encrypted messages, transfer files.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/p2p-sync">p2p-sync</a><span class="w-desc">LAN-only peer-to-peer file sync. No cloud, no accounts. mDNS discovery, delta sync, TLS.</span><span class="w-lang">Go</span></li>
+          </ul>
+        </details>
+        <details class="work-group" id="more-mobile-cross-platform-apps" open>
+          <summary><span class="wg-title">Mobile &amp; cross-platform apps</span><span class="wg-count">12</span></summary>
+          <ul class="work-list">
+            <li><a href="https://github.com/synthalorian/Open-Life">Open-Life</a><span class="w-desc">AI-powered life management app — fitness, finance, and wellness in one place.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/Open-Budget">Open-Budget</a><span class="w-desc">Free, open-source budgeting app with an AI spending predictor and savings optimizer.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/Open-Fit">Open-Fit</a><span class="w-desc">Free, open-source fitness app: workouts, nutrition, glucose tracking, and more.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/open-habit">open-habit</a><span class="w-desc">Retro-styled habit tracker with gamification.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/open-health">open-health</a><span class="w-desc">Privacy-first health data aggregator. Your data stays local. Always.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/Open-Agenda">Open-Agenda</a><span class="w-desc">K-12 educational management suite.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/Open-Veterinarian">Open-Veterinarian</a><span class="w-desc">Open-source assistance app for veterinarians (Android and iOS).</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/Open-Lore">Open-Lore</a><span class="w-desc">Game world bible — structured worldbuilding with graph relationships. Flutter cross-platform.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/Open-Glyph">Open-Glyph</a><span class="w-desc">Pixel-art font editor with retro templates for creating bitmap fonts. Flutter.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/Open-Assurance">Open-Assurance</a><span class="w-desc">Affirmations app with breathing exercises and ambient sounds. Flutter.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/flamingo">flamingo</a><span class="w-desc">Utility app for Android: 18 offline tools behind a CRT-style interface.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/vhs-cam">vhs-cam</a><span class="w-desc">Retro VHS camcorder app for Android: real-time shader effects baked into recorded video (CameraX + OpenGL spike).</span><span class="w-lang">Kotlin</span></li>
+          </ul>
+        </details>
+        <details class="work-group" id="more-game-companions-player-tools" open>
+          <summary><span class="wg-title">Game companions &amp; player tools</span><span class="wg-count">9</span></summary>
+          <ul class="work-list">
+            <li><a href="https://github.com/synthalorian/sc-synthesis">sc-synthesis</a><span class="w-desc">Fully offline Star Citizen companion — 238 ships, loadout builder, fleet manager. Flutter + Rust.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/Open-Warcraft">Open-Warcraft</a><span class="w-desc">A free, open-source Azeroth companion app — lore archive, class builder with rotation guides, and a gamified XP system for WoW fans.</span><span class="w-lang">TypeScript</span></li>
+            <li><a href="https://github.com/synthalorian/open_ascension">open_ascension</a><span class="w-desc">Companion app for Project Ascension (classless WoW): builder, talents, mystic enchants, gear, and lore.</span><span class="w-lang">Dart</span></li>
+            <li><a href="https://github.com/synthalorian/dark-and-calculator">dark-and-calculator</a><span class="w-desc">Synthwave-themed combat calculator for Dark and Darker. React + TypeScript + Vite.</span><span class="w-lang">TypeScript</span></li>
+            <li><a href="https://github.com/synthalorian/AlbionOnline-Companion">AlbionOnline-Companion</a><span class="w-desc">Albion Online statistics analysis tool, rebuilt with Avalonia UI.</span><span class="w-lang">C#</span></li>
+            <li><a href="https://github.com/synthalorian/AlbionOnline-Translator">AlbionOnline-Translator</a><span class="w-desc">Albion Online chat translator overlay — passive packet sniffer, no game modification. Linux, Windows, macOS.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/daedric-companion">daedric-companion</a><span class="w-desc">Desktop companion for the Daedric Online Skyrim RP server.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/daedric-toolkit">daedric-toolkit</a><span class="w-desc">Install doctor for Daedric Online — verify a Skyrim SE install against the launcher contract.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/daedric-online-linux">daedric-online-linux</a><span class="w-desc">Runs the Daedric Online Skyrim RP launcher on Linux via umu + GE-Proton, including a fix for the Steam bridge.</span><span class="w-lang">Python</span></li>
+          </ul>
+        </details>
+        <details class="work-group" id="more-systems-data-developer-tools" open>
+          <summary><span class="wg-title">Systems, data &amp; developer tools</span><span class="wg-count">22</span></summary>
+          <ul class="work-list">
+            <li><a href="https://github.com/synthalorian/cassettedb">cassettedb</a><span class="w-desc">Embedded key-value database in Rust with LSM-tree storage and replication.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/cassette-db">cassette-db</a><span class="w-desc">Embedded key-value store with cassette-tape append-only log. Zero dependencies, ACID transactions. Zig.</span><span class="w-lang">Zig</span></li>
+            <li><a href="https://github.com/synthalorian/ferrite">ferrite</a><span class="w-desc">Minimal container runtime from scratch with namespaces, cgroups v2, and overlayfs. Educational but functional. Nim.</span><span class="w-lang">Nim</span></li>
+            <li><a href="https://github.com/synthalorian/splice">splice</a><span class="w-desc">Minimalist Git alternative for binary assets. Content-addressable storage, delta compression, lazy checkout. C.</span><span class="w-lang">C</span></li>
+            <li><a href="https://github.com/synthalorian/crt">crt</a><span class="w-desc">Static site generator with functional DAG transform pipeline. Markdown in, HTML out. OCaml.</span><span class="w-lang">OCaml</span></li>
+            <li><a href="https://github.com/synthalorian/gridlock">gridlock</a><span class="w-desc">Distributed task queue with capability matching. Workers advertise skills, scheduler pairs jobs. Python + FastAPI + Redis.</span><span class="w-lang">Python</span></li>
+            <li><a href="https://github.com/synthalorian/forge">forge</a><span class="w-desc">CLI + web hub for Git backup, AI agents, scripture, themes, and system tools. Rust CLI + Rails 8 GUI.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/blueprint">blueprint</a><span class="w-desc">Dev environment configuration as code: packages, dotfiles, services, and environment variables in one YAML manifest.</span><span class="w-lang">Ruby</span></li>
+            <li><a href="https://github.com/synthalorian/yayo-studio">yayo-studio</a><span class="w-desc">Creative project hub — one dashboard for game, music, code, writing, and art projects. Rails 8 + Hotwire.</span><span class="w-lang">Ruby</span></li>
+            <li><a href="https://github.com/synthalorian/trackerclaw">trackerclaw</a><span class="w-desc">Privacy-first time tracker — local, no cloud, no accounts. TUI + web dashboard.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/tapeworm">tapeworm</a><span class="w-desc">TUI log file analyzer with real-time tail, grep, aggregation, histograms, and anomaly detection. Rust.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/signalscope">signalscope</a><span class="w-desc">SDR spectrum analyzer and demodulator TUI with RTL-SDR support.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/synthreader">synthreader</a><span class="w-desc">RSS thread reader with Tauri frontend. Rust workspace + SQLite + readability extraction.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/vhs-86">vhs-86</a><span class="w-desc">Retro TUI file manager with image previews, vim navigation, and synthwave aesthetics.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/vhs-irc">vhs-irc</a><span class="w-desc">Modern IRC bouncer + client hybrid with persistent history, file uploads, and retro terminal UI. TypeScript.</span><span class="w-lang">TypeScript</span></li>
+            <li><a href="https://github.com/synthalorian/book-layout">book-layout</a><span class="w-desc">Procedural book layout engine: Markdown → print-ready PDF. Grid-based typography, signature-aware imposition.</span><span class="w-lang">Python</span></li>
+            <li><a href="https://github.com/synthalorian/chromawave">chromawave</a><span class="w-desc">Palette extraction, mixing, and contrast checks from the CLI.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/vhsvault">vhsvault</a><span class="w-desc">Content-addressed manifests and verification for local archives.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/runesync">runesync</a><span class="w-desc">Deterministic, dry-run-first directory synchronization.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/neondeck">neondeck</a><span class="w-desc">A terminal fleet report for every repo you maintain.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/gaslighting-compiler">gaslighting-compiler</a><span class="w-desc">A fake compiler that gaslights the user. It doesn't actually compile anything — it just judges your code.</span><span class="w-lang">Rust</span></li>
+            <li><a href="https://github.com/synthalorian/unionizing-houseplants">unionizing-houseplants</a><span class="w-desc">Plant monitoring system where houseplants unionize and go on strike when growing conditions are poor.</span><span class="w-lang">Python</span></li>
+          </ul>
+        </details>
+        <details class="work-group" id="more-themes-desktop-linux" open>
+          <summary><span class="wg-title">Themes, desktop &amp; Linux</span><span class="wg-count">7</span></summary>
+          <ul class="work-list">
+            <li><a href="https://github.com/Blackshield-Company/cachyos-blackshield">cachyos-blackshield</a><span class="w-desc">Blackshield theme pack for CachyOS / KDE Plasma — Plasma livery, terminals, Neovim colorscheme, boot splash, wallpapers.</span><span class="w-lang">QML</span></li>
+            <li><a href="https://github.com/Blackshield-Company/blackshield-icon-pack">blackshield-icon-pack</a><span class="w-desc">Full-coverage Android icon pack — dark steel tiles, bone glyphs, one blood accent. 48k components / 13.7k apps / 20 launchers.</span><span class="w-lang">Python</span></li>
+            <li><a href="https://github.com/Blackshield-Company/blackshield-clock-widget">blackshield-clock-widget</a><span class="w-desc">Gothic medieval clock widget for Android — blackletter time, blood-red divide.</span><span class="w-lang">Python</span></li>
+            <li><a href="https://github.com/Blackshield-Company/blackshield-knight-sprite">blackshield-knight-sprite</a><span class="w-desc">Procedural sprite atlas for the Blackshield Knight — 9 states × 6 frames, generator included.</span><span class="w-lang">Python</span></li>
+            <li><a href="https://github.com/synthalorian/complete-omarchy-synthwave-84">complete-omarchy-synthwave-84</a><span class="w-desc">Complete Omarchy Linux setup with a Synthwave '84 theme — Hyprland, Quickshell, SDDM, Plymouth, cursor, and fonts.</span></li>
+            <li><a href="https://github.com/synthalorian/this-is-the-wide">this-is-the-wide</a><span class="w-desc">Forging a native 21:9 2560×1080 mode on a 1440p monitor via drm.edid_firmware on NVIDIA Wayland.</span><span class="w-lang">Shell</span></li>
+            <li><a href="https://github.com/synthalorian/synthalorian.github.io">synthalorian.github.io</a><span class="w-desc">Previous personal site, including the Blackshield Knight sprite and its generator.</span><span class="w-lang">HTML</span></li>
+          </ul>
+        </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== STACK ============================== -->
+    <section class="section" id="stack" aria-labelledby="stack-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow"><span class="num">03</span> Skills</p>
+            <h2 id="stack-title">Stack</h2>
+          </div>
+          <p>Taken from the public repositories above — what the code is actually written in.</p>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-col langs panel reveal">
+            <h3>Primary languages</h3>
+            <ul class="lang-bars">
+              <li><span class="ln">Rust</span><span class="bar" aria-hidden="true"><i style="--w:100.0%"></i></span><span class="lv">41</span></li>
+              <li><span class="ln">Dart</span><span class="bar" aria-hidden="true"><i style="--w:43.9%"></i></span><span class="lv">18</span></li>
+              <li><span class="ln">Python</span><span class="bar" aria-hidden="true"><i style="--w:22.0%"></i></span><span class="lv">9</span></li>
+              <li><span class="ln">C++</span><span class="bar" aria-hidden="true"><i style="--w:12.2%"></i></span><span class="lv">5</span></li>
+              <li><span class="ln">TypeScript</span><span class="bar" aria-hidden="true"><i style="--w:12.2%"></i></span><span class="lv">5</span></li>
+              <li><span class="ln">C</span><span class="bar" aria-hidden="true"><i style="--w:7.3%"></i></span><span class="lv">3</span></li>
+              <li><span class="ln">Go</span><span class="bar" aria-hidden="true"><i style="--w:7.3%"></i></span><span class="lv">3</span></li>
+            </ul>
+            <p class="lang-also"><span>Also</span>Elixir · Ruby · Kotlin · Zig · Odin · Svelte · OCaml · Nim · Julia · C# · JavaScript · Shell</p>
+            <p class="stack-note">Count of public repositories by primary language.</p>
+          </div>
+          <div class="stack-col panel reveal">
+            <h3>Frameworks &amp; platforms</h3>
+            <ul class="chips">
+              <li>Flutter</li><li>Tauri 2</li><li>JUCE 8</li><li>VST3 / CLAP</li><li>SDL2</li><li>OpenGL</li><li>Vulkan</li><li>Bevy</li><li>Svelte 5 / SvelteKit</li><li>React</li><li>React Native / Expo</li><li>Rails 8 + Hotwire</li><li>Axum</li><li>FastAPI</li><li>ratatui</li><li>FTXUI</li><li>Qt 6</li><li>Avalonia</li><li>SQLite</li><li>Redis</li><li>PortAudio / PortMidi</li><li>embedded-hal (STM32)</li><li>Reticulum / LXMF</li><li>KDE Plasma / QML</li>
+            </ul>
+          </div>
+          <div class="stack-col panel reveal">
+            <h3>Domains</h3>
+            <ul class="domain-list">
+              <li>Game engines &amp; ECS architecture</li>
+              <li>Real-time audio, DSP &amp; plugins</li>
+              <li>AI agent harnesses &amp; LLM tooling</li>
+              <li>Digital forensics &amp; security tools</li>
+              <li>Mesh &amp; local-first networking</li>
+              <li>Cross-platform mobile &amp; desktop apps</li>
+              <li>Terminal UIs &amp; CLIs</li>
+              <li>Embedded audio firmware</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="contact-panel panel reveal">
+          <div class="contact-copy">
+            <p class="eyebrow"><span class="num">04</span> Contact</p>
+            <h2 id="contact-title">Let's build something that holds.</h2>
+            <p>Collaborations, contributions, contract work, or a full-time role — email is the fastest way to reach me. Issues and pull requests on any repo are welcome too.</p>
+          </div>
+          <ul class="contact-links">
+            <li><a href="mailto:synthalorian@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg><span><span class="cl-label">Email</span><span class="cl-value">synthalorian@gmail.com</span></span><span class="cl-arrow" aria-hidden="true">→</span></a></li>
+            <li><a href="https://github.com/synthalorian"><svg aria-hidden="true"><use href="#i-github"/></svg><span><span class="cl-label">GitHub</span><span class="cl-value">github.com/synthalorian</span></span><span class="cl-arrow" aria-hidden="true">→</span></a></li>
+            <li><a href="https://github.com/Blackshield-Company"><svg aria-hidden="true"><use href="#i-shield"/></svg><span><span class="cl-label">Organization</span><span class="cl-value">Blackshield Company</span></span><span class="cl-arrow" aria-hidden="true">→</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p><svg aria-hidden="true"><use href="#mark"/></svg> © <span id="year">2026</span> synth. The shield holds.</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/synthalorian">GitHub</a></li>
+        <li><a href="https://github.com/Blackshield-Company">Blackshield Company</a></li>
+        <li><a href="#top">Back to top ↑</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
