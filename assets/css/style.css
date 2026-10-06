@@ -48,6 +48,10 @@
   --cut: 14px;
   --radius: 2px;
   --ease: cubic-bezier(.2, .7, .2, 1);
+  --ease-out: cubic-bezier(.22, .61, .36, 1);
+
+  /* thin diagonal on each cut corner so angular frames read as continuous */
+  --corner-line: transparent calc(50% - 1px), var(--rule) calc(50% - 1px), var(--rule) calc(50% + 1px), transparent calc(50% + 1px);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -378,9 +382,65 @@ h1, h2, h3 {
 
 .hero-portrait {
   position: relative;
+  isolation: isolate;
   justify-self: end;
   width: min(100%, 420px);
 }
+
+/* Drifting smoke + rising embers behind the avatar. Decorative, transform/opacity only. */
+.hero-portrait::before {
+  content: "";
+  position: absolute;
+  inset: -18% -22%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 32% at 28% 62%, rgba(193, 18, 31, .16), transparent 70%),
+    radial-gradient(34% 28% at 72% 30%, rgba(143, 149, 156, .07), transparent 70%),
+    radial-gradient(28% 24% at 62% 84%, rgba(232, 116, 59, .07), transparent 70%);
+  opacity: .7;
+  animation: smoke-drift 26s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+.embers {
+  position: absolute;
+  inset: 0 -8%;
+  z-index: -1;
+  pointer-events: none;
+}
+.embers i {
+  position: absolute;
+  bottom: 6%;
+  left: var(--x);
+  width: var(--s, 3px);
+  height: var(--s, 3px);
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffb27a 0, var(--ember) 45%, rgba(232, 116, 59, 0) 72%);
+  opacity: 0;
+  animation: ember-rise var(--t, 11s) linear var(--d, 0s) infinite;
+  will-change: transform, opacity;
+}
+.embers i:nth-child(1) { --x: 6%;  --t: 12s; --d: -2s;  --s: 3px; }
+.embers i:nth-child(2) { --x: 18%; --t: 15s; --d: -9s;  --s: 2px; }
+.embers i:nth-child(3) { --x: 35%; --t: 11s; --d: -5s;  --s: 2px; }
+.embers i:nth-child(4) { --x: 58%; --t: 14s; --d: -12s; --s: 3px; }
+.embers i:nth-child(5) { --x: 74%; --t: 13s; --d: -7s;  --s: 2px; }
+.embers i:nth-child(6) { --x: 90%; --t: 16s; --d: -3s;  --s: 3px; }
+.embers i:nth-child(7) { --x: 97%; --t: 12s; --d: -10s; --s: 2px; }
+
+@keyframes smoke-drift {
+  0%   { transform: translate3d(-3%, 2%, 0) scale(1);    opacity: .55; }
+  50%  { transform: translate3d(2%, -3%, 0) scale(1.06); opacity: .85; }
+  100% { transform: translate3d(4%, 1%, 0) scale(1.02);  opacity: .65; }
+}
+@keyframes ember-rise {
+  0%   { transform: translate3d(0, 0, 0);        opacity: 0; }
+  15%  { opacity: .55; }
+  60%  { transform: translate3d(8px, -150px, 0);  opacity: .35; }
+  100% { transform: translate3d(-6px, -260px, 0); opacity: 0; }
+}
+.hero.is-offscreen .hero-portrait::before,
+.hero.is-offscreen .embers i { animation-play-state: paused; }
 .portrait-frame {
   position: relative;
   padding: 10px;
@@ -430,27 +490,23 @@ h1, h2, h3 {
 
 /* ---------- Panels (angular) ---------- */
 
+/* declared per element so --cut / --corner-line overrides take effect */
+.panel,
+.card::after {
+  --corners:
+    linear-gradient(135deg, var(--corner-line)) top left / var(--cut) var(--cut) no-repeat,
+    linear-gradient(135deg, var(--corner-line)) bottom right / var(--cut) var(--cut) no-repeat;
+}
+
 .panel {
   position: relative;
   background:
+    var(--corners),
     linear-gradient(180deg, rgba(255, 255, 255, .025), transparent 40%),
     var(--panel);
   border: 1px solid var(--rule);
   clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
 }
-/* draws the diagonal edge on the cut corners so the frame reads as continuous */
-.panel::before,
-.panel::after {
-  content: "";
-  position: absolute;
-  width: calc(var(--cut) * 1.4142);
-  height: 1px;
-  background: var(--rule);
-  transform-origin: 0 0;
-  pointer-events: none;
-}
-.panel::before { left: 0; top: var(--cut); transform: rotate(-45deg); }
-.panel::after { right: 0; bottom: var(--cut); transform-origin: 100% 100%; transform: rotate(-45deg); }
 
 /* ---------- About ---------- */
 
@@ -510,15 +566,33 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   padding: 1.6rem 1.5rem 1.4rem;
-  transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease), background .25s var(--ease);
+  transition: translate .2s var(--ease-out);
+}
+/* Hover/focus glow lives on an overlay so only its opacity animates */
+.card::after {
+  --corner-line: transparent calc(50% - 1px), rgba(232, 116, 59, .6) calc(50% - 1px), rgba(232, 116, 59, .6) calc(50% + 1px), transparent calc(50% + 1px);
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  border: 1px solid rgba(193, 18, 31, .6);
+  background:
+    var(--corners),
+    radial-gradient(420px 200px at 0% 0%, rgba(193, 18, 31, .11), transparent 70%);
+  box-shadow:
+    inset 0 0 0 1px rgba(193, 18, 31, .18),
+    inset 0 0 26px -6px rgba(232, 116, 59, .22);
+  opacity: 0;
+  transition: opacity .2s var(--ease-out);
 }
 .card:hover,
-.card:focus-within {
-  border-color: rgba(193, 18, 31, .55);
-  background:
-    radial-gradient(400px 180px at 0% 0%, rgba(193, 18, 31, .10), transparent 70%),
-    var(--panel);
-  box-shadow: inset 0 0 0 1px rgba(193, 18, 31, .15), 0 18px 40px -24px rgba(193, 18, 31, .55);
+.card:focus-within { translate: 0 -4px; }
+.card:hover::after,
+.card:focus-within::after { opacity: 1; }
+@supports selector(:has(*)) {
+  /* mouse clicks shouldn't leave a card lifted; keyboard focus should */
+  .card:focus-within:not(:hover):not(:has(:focus-visible)) { translate: none; }
+  .card:focus-within:not(:hover):not(:has(:focus-visible))::after { opacity: 0; }
 }
 .card:target { border-color: var(--ember); }
 
@@ -831,6 +905,7 @@ h1, h2, h3 {
   align-items: center;
   padding: clamp(2rem, 5vw, 3.5rem);
   background:
+    var(--corners),
     radial-gradient(600px 260px at 100% 0%, rgba(193, 18, 31, .14), transparent 70%),
     linear-gradient(180deg, rgba(255, 255, 255, .025), transparent 40%),
     var(--panel);
@@ -892,14 +967,37 @@ h1, h2, h3 {
 .footer-inner a:hover { color: var(--white); }
 .footer-links { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
 
-/* ---------- Reveal (only when JS + motion allowed) ---------- */
+/* ---------- Section heading accent rule ---------- */
+
+.section-head h2::after,
+.contact h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  margin-top: .85rem;
+  background: var(--blood);
+  transform-origin: left center;
+}
+
+/* ---------- Reveal (only when JS + motion allowed; see the boot script in <head>) ---------- */
 
 .js .reveal {
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity .7s var(--ease), transform .7s var(--ease);
+  transform: translate3d(0, 14px, 0);
+  transition:
+    opacity .55s var(--ease-out) var(--rd, 0ms),
+    transform .55s var(--ease-out) var(--rd, 0ms),
+    translate .2s var(--ease-out);
 }
 .js .reveal.is-in { opacity: 1; transform: none; }
+
+.js .reveal h2::after,
+.js .section-head.reveal h2::after {
+  transform: scaleX(0);
+  transition: transform .6s var(--ease-out) calc(var(--rd, 0ms) + 180ms);
+}
+.js .reveal.is-in h2::after { transform: scaleX(1); }
 
 /* ---------- Responsive ---------- */
 
@@ -955,6 +1053,10 @@ h1, h2, h3 {
     transition-duration: .01ms !important;
   }
   .js .reveal { opacity: 1; transform: none; }
+  .js .reveal h2::after { transform: none; }
+  .card:hover, .card:focus-within { translate: none; }
+  .hero-portrait::before { animation: none; }
+  .embers { display: none; }
 }
 
 @media print {

@@ -27,6 +27,8 @@
   <meta name="twitter:description" content="Open-source game engines, synthesizers and audio tools, AI agent tooling, and offline-first apps.">
   <meta name="twitter:image" content="https://synthalorian.pages.dev/assets/img/og-image.jpg">
 
+  <!-- Sets the "js" class before first paint so reveal animations never flash. CSP hash in _headers must match this exact script. -->
+  <script>(function(d){var r=d.documentElement;r.classList.remove("no-js");if("IntersectionObserver"in window&&window.matchMedia&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){r.classList.add("js");setTimeout(function(){if(!window.__synthReveal)r.classList.remove("js")},3000)}})(document);</script>
   <link rel="preload" href="/assets/fonts/cinzel-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -115,6 +117,7 @@
           </dl>
         </div>
         <div class="hero-portrait">
+          <span class="embers" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
           <span class="portrait-corner tr" aria-hidden="true"></span>
           <span class="portrait-corner bl" aria-hidden="true"></span>
           <div class="portrait-frame">
@@ -288,7 +291,7 @@
           </div>
         </div>
         <div class="work-groups">
-        <details class="work-group" id="more-ai-agent-tooling" open>
+        <details class="work-group reveal" id="more-ai-agent-tooling" open>
           <summary><span class="wg-title">AI &amp; agent tooling</span><span class="wg-count">16</span></summary>
           <ul class="work-list">
             <li><a href="https://github.com/synthalorian/hermes-wingman">hermes-wingman</a><span class="w-desc">Full GUI for Hermes Agent — Flutter desktop and mobile apps plus a Rails 8 web dashboard on a Rust backend. Replaces the Hermes CLI.</span><span class="w-lang">Dart</span></li>
@@ -309,7 +312,7 @@
             <li><a href="https://github.com/synthalorian/openclaw-gemini-setup-guide">openclaw-gemini-setup-guide</a><span class="w-desc">Step-by-step guide for wiring OpenClaw to Google Gemini 2.5 Flash. Covers configuration, gemini-proxy plugin, and provider fallback chains.</span></li>
           </ul>
         </details>
-        <details class="work-group" id="more-game-engines-games-graphics" open>
+        <details class="work-group reveal" id="more-game-engines-games-graphics" open>
           <summary><span class="wg-title">Game engines, games &amp; graphics</span><span class="wg-count">10</span></summary>
           <ul class="work-list">
             <li><a href="https://github.com/synthalorian/chronos-engine">chronos-engine</a><span class="w-desc">A genre-agnostic ECS game engine in Rust. Zero dependencies (core). Deterministic by design.</span><span class="w-lang">Rust</span></li>
@@ -324,7 +327,7 @@
             <li><a href="https://github.com/synthalorian/esolang">esolang</a><span class="w-desc">JUMP — an esoteric language where the instruction pointer moves like a chess knight. 2D grid, stack-based.</span><span class="w-lang">Rust</span></li>
           </ul>
         </details>
-        <details class="work-group" id="more-audio-music-dsp" open>
+        <details class="work-group reveal" id="more-audio-music-dsp" open>
           <summary><span class="wg-title">Audio, music &amp; DSP</span><span class="wg-count">10</span></summary>
           <ul class="work-list">
             <li><a href="https://github.com/synthalorian/Open-Amp">Open-Amp</a><span class="w-desc">Cross-platform guitar amplifier and effects processor with real-time DSP — Linux, Android, iOS.</span><span class="w-lang">C++</span></li>
@@ -339,7 +342,7 @@
             <li><a href="https://github.com/synthalorian/Open-Praise">Open-Praise</a><span class="w-desc">Setlist and chord sheet manager for worship teams.</span><span class="w-lang">Dart</span></li>
           </ul>
         </details>
-        <details class="work-group" id="more-security-digital-forensics" open>
+        <details class="work-group reveal" id="more-security-digital-forensics" open>
           <summary><span class="wg-title">Security &amp; digital forensics</span><span class="wg-count">8</span></summary>
           <ul class="work-list">
             <li><a href="https://github.com/Blackshield-Company/custody">custody</a><span class="w-desc">Tamper-evident chain-of-custody log for digital evidence.</span><span class="w-lang">Rust</span></li>
@@ -352,7 +355,7 @@
             <li><a href="https://github.com/Blackshield-Company/loopback">loopback</a><span class="w-desc">Self-hosted webhook testing tunnel with replay, inspection, programmable transformations, and chaos mode. Elixir.</span><span class="w-lang">Elixir</span></li>
           </ul>
         </details>
-        <details class="work-group" id="more-mesh-local-first-networking" open>
+        <details class="work-group reveal" id="more-mesh-local-first-networking" open>
           <summary><span class="wg-title">Mesh &amp; local-first networking</span><span class="wg-count">8</span></summary>
           <ul class="work-list">
             <li><a href="https://github.com/synthalorian/reticulum-hub">reticulum-hub</a><span class="w-desc">Web dashboard and management platform for Reticulum networks.</span><span class="w-lang">HTML</span></li>
@@ -365,7 +368,7 @@
             <li><a href="https://github.com/synthalorian/p2p-sync">p2p-sync</a><span class="w-desc">LAN-only peer-to-peer file sync. No cloud, no accounts. mDNS discovery, delta sync, TLS.</span><span class="w-lang">Go</span></li>
           </ul>
         </details>
-        <details class="work-group" id="more-mobile-cross-platform-apps" open>
+        <details class="work-group reveal" id="more-mobile-cross-platform-apps" open>
           <summary><span class="wg-title">Mobile &amp; cross-platform apps</span><span class="wg-count">12</span></summary>
           <ul class="work-list">
             <li><a href="https://github.com/synthalorian/Open-Life">Open-Life</a><span class="w-desc">AI-powered life management app — fitness, finance, and wellness in one place.</span><span class="w-lang">Dart</span></li>
@@ -382,7 +385,7 @@
             <li><a href="https://github.com/synthalorian/vhs-cam">vhs-cam</a><span class="w-desc">Retro VHS camcorder app for Android: real-time shader effects baked into recorded video (CameraX + OpenGL spike).</span><span class="w-lang">Kotlin</span></li>
           </ul>
         </details>
-        <details class="work-group" id="more-game-companions-player-tools" open>
+        <details class="work-group reveal" id="more-game-companions-player-tools" open>
           <summary><span class="wg-title">Game companions &amp; player tools</span><span class="wg-count">9</span></summary>
           <ul class="work-list">
             <li><a href="https://github.com/synthalorian/sc-synthesis">sc-synthesis</a><span class="w-desc">Fully offline Star Citizen companion — 238 ships, loadout builder, fleet manager. Flutter + Rust.</span><span class="w-lang">Dart</span></li>
@@ -396,7 +399,7 @@
             <li><a href="https://github.com/synthalorian/daedric-online-linux">daedric-online-linux</a><span class="w-desc">Runs the Daedric Online Skyrim RP launcher on Linux via umu + GE-Proton, including a fix for the Steam bridge.</span><span class="w-lang">Python</span></li>
           </ul>
         </details>
-        <details class="work-group" id="more-systems-data-developer-tools" open>
+        <details class="work-group reveal" id="more-systems-data-developer-tools" open>
           <summary><span class="wg-title">Systems, data &amp; developer tools</span><span class="wg-count">22</span></summary>
           <ul class="work-list">
             <li><a href="https://github.com/synthalorian/cassettedb">cassettedb</a><span class="w-desc">Embedded key-value database in Rust with LSM-tree storage and replication.</span><span class="w-lang">Rust</span></li>
@@ -423,7 +426,7 @@
             <li><a href="https://github.com/synthalorian/unionizing-houseplants">unionizing-houseplants</a><span class="w-desc">Plant monitoring system where houseplants unionize and go on strike when growing conditions are poor.</span><span class="w-lang">Python</span></li>
           </ul>
         </details>
-        <details class="work-group" id="more-themes-desktop-linux" open>
+        <details class="work-group reveal" id="more-themes-desktop-linux" open>
           <summary><span class="wg-title">Themes, desktop &amp; Linux</span><span class="wg-count">7</span></summary>
           <ul class="work-list">
             <li><a href="https://github.com/Blackshield-Company/cachyos-blackshield">cachyos-blackshield</a><span class="w-desc">Blackshield theme pack for CachyOS / KDE Plasma — Plasma livery, terminals, Neovim colorscheme, boot splash, wallpapers.</span><span class="w-lang">QML</span></li>

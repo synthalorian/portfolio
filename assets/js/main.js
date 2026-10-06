@@ -3,6 +3,7 @@
   "use strict";
   var root = document.documentElement;
   root.classList.remove("no-js");
+  window.__synthReveal = true; // tells the <head> boot script's failsafe that reveals are wired up
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -72,18 +73,35 @@
     });
   }
 
-  // Gentle reveal on scroll (skipped entirely for reduced motion).
-  if (!reduceMotion && "IntersectionObserver" in window) {
-    root.classList.add("js");
+  // Reveal on scroll: fade + slide up once, with a light stagger for items that
+  // enter together. The hidden state only exists under html.js (set in <head>),
+  // which is never set for reduced motion, so content is visible without JS.
+  var canAnimate = !reduceMotion && "IntersectionObserver" in window;
+  if (canAnimate) {
+    root.classList.add("js"); // no-op if the boot script already ran
+    var byDomOrder = function (a, b) {
+      return a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
+    };
     var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-in");
-          io.unobserve(entry.target);
-        }
+      var batch = [];
+      entries.forEach(function (entry) { if (entry.isIntersecting) batch.push(entry.target); });
+      batch.sort(byDomOrder).forEach(function (el, i) {
+        el.style.setProperty("--rd", Math.min(i, 5) * 70 + "ms");
+        el.classList.add("is-in");
+        io.unobserve(el);
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.01 });
     document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+
+    // Pause the hero smoke/embers while the hero is off screen.
+    var hero = document.querySelector(".hero");
+    if (hero) {
+      new IntersectionObserver(function (entries) {
+        hero.classList.toggle("is-offscreen", !entries[0].isIntersecting);
+      }).observe(hero);
+    }
+  } else {
+    root.classList.remove("js");
   }
 
   var y = document.getElementById("year");

@@ -44,6 +44,15 @@ Everything lives in `index.html`:
 
 Data came from public GitHub metadata and READMEs as of October 2026. Star counts and versions are static. Update them by hand when you want to.
 
+## Animations
+
+Scroll reveals, the heading accent rule, card hover lift, and the hero smoke/embers are all CSS transform/opacity, driven by
+`assets/js/main.js`. They are fully disabled under `prefers-reduced-motion`, and nothing is hidden without JavaScript.
+
+A one-line inline script in `<head>` adds the `js` class before first paint. `_headers` allows it by its SHA-256 hash, so if you
+change that script, update the `'sha256-…'` value in the Content-Security-Policy. If the hash doesn't match, the browser blocks the
+script, and the site still works but reveals start slightly later.
+
 ## Deploying (Cloudflare Pages)
 
 Connect this repo in Cloudflare Pages. Use framework preset **None** and leave the build command **empty**. Set the output directory to `/`.
