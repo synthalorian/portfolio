@@ -14,6 +14,7 @@ assets/css/style.css    all styles (palette variables at the top)
 assets/js/main.js       mobile nav, section highlight, scroll reveal, "More work" expand/collapse
 assets/fonts/           self-hosted Cinzel, Inter, JetBrains Mono (SIL OFL 1.1)
 assets/img/             avatar + Open Graph card
+assets/img/mods/        Skyrim mod cover thumbnails (640×360, WebP + JPEG fallback)
 _headers                Cloudflare Pages security and cache headers
 robots.txt, sitemap.xml
 ```
@@ -39,6 +40,10 @@ Everything lives in `index.html`:
   <li><a href="https://github.com/synthalorian/REPO">REPO</a><span class="w-desc">One-line description.</span><span class="w-lang">Rust</span></li>
   ```
   Update the number in `<span class="wg-count">` and the "N more public repositories" line if you add or remove entries.
+- **Skyrim mods**: `<section id="mods">`. A spec panel, then two waves of five `<article class="card panel mod-card">` cards. The
+  first card of each wave has `is-lead` (spans two columns, art beside the text, three bullet points). Each card links to its Nexus
+  page and GitHub repo. Thumbnails live in `assets/img/mods/<repo>.webp` and `.jpg`, 640×360, lazy-loaded. Cards say "early beta"
+  instead of a version number on purpose, so they don't go stale when a mod is updated. The mod repos are not repeated in "More work".
 - **Stack**: language bars use `style="--w:NN%"` (relative to the largest count); chips and domains are plain lists.
 - **Contact**: the `contact-links` list near the bottom.
 
@@ -60,6 +65,12 @@ Everything is disabled under `prefers-reduced-motion`, and nothing is hidden wit
 A one-line inline script in `<head>` adds the `js` class before first paint. `_headers` allows it by its SHA-256 hash, so if you
 change that script, update the `'sha256-…'` value in the Content-Security-Policy. If the hash doesn't match, the browser blocks the
 script, and the site still works but reveals start slightly later.
+
+## Cache busting
+
+`_headers` caches `/assets/*` for a day, so the CSS and JS URLs in `index.html` and `404.html` carry a `?v=` token. Change it
+whenever `style.css` or `main.js` changes (any fresh value works; the current one is the first 7 hex characters of
+`cat assets/css/style.css assets/js/main.js | sha256sum`).
 
 ## Deploying (Cloudflare Pages)
 
