@@ -46,8 +46,16 @@ Data came from public GitHub metadata and READMEs as of October 2026. Star count
 
 ## Animations
 
-Scroll reveals, the heading accent rule, card hover lift, and the hero smoke/embers are all CSS transform/opacity, driven by
-`assets/js/main.js`. They are fully disabled under `prefers-reduced-motion`, and nothing is hidden without JavaScript.
+All motion is CSS (transform, opacity, clip-path only) with small helpers in `assets/js/main.js`:
+
+- **Hero intro** (~1.1s, once per load): the shield mark strikes in, a blood slash cuts the name in, a steel glint passes over it, and the rest of the hero follows.
+- **Section headings**: a diagonal cut with a spark at the edge, then the red rule draws in.
+- **Project cards**: lock in with a slight rotation and settle. On hover or keyboard focus they lift, glow, and get one steel shine pass.
+- **"More work"**: groups reveal on scroll and their labels type on.
+- **Scroll progress**: a rail on the left edge (a top bar on small screens).
+- **Hero smoke and embers**: drift a few pixels with the mouse (fine pointers only) and pause when off screen.
+
+Everything is disabled under `prefers-reduced-motion`, and nothing is hidden without JavaScript.
 
 A one-line inline script in `<head>` adds the `js` class before first paint. `_headers` allows it by its SHA-256 hash, so if you
 change that script, update the `'sha256-…'` value in the Content-Security-Policy. If the hash doesn't match, the browser blocks the

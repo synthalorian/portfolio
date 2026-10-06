@@ -100,6 +100,48 @@
         hero.classList.toggle("is-offscreen", !entries[0].isIntersecting);
       }).observe(hero);
     }
+
+    // Scroll progress (left rail on desktop, top bar on small screens).
+    var bar = document.querySelector(".scroll-progress");
+    if (bar) {
+      var barQueued = false;
+      var paintBar = function () {
+        barQueued = false;
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+        bar.style.setProperty("--p", p.toFixed(4));
+      };
+      var queueBar = function () {
+        if (!barQueued) { barQueued = true; window.requestAnimationFrame(paintBar); }
+      };
+      window.addEventListener("scroll", queueBar, { passive: true });
+      window.addEventListener("resize", queueBar, { passive: true });
+      paintBar();
+    }
+
+    // Smoke/embers drift a few px with the pointer. Fine pointers only, rAF-throttled,
+    // ignored while the hero is off screen.
+    var portrait = document.querySelector(".hero-portrait");
+    if (portrait && hero && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      var px = 0, py = 0, pQueued = false;
+      var paintParallax = function () {
+        pQueued = false;
+        portrait.style.setProperty("--px", px.toFixed(3));
+        portrait.style.setProperty("--py", py.toFixed(3));
+      };
+      document.addEventListener("pointermove", function (e) {
+        if (e.pointerType !== "mouse" || hero.classList.contains("is-offscreen")) return;
+        var r = portrait.getBoundingClientRect();
+        px = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (window.innerWidth / 2)));
+        py = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (window.innerHeight / 2)));
+        if (!pQueued) { pQueued = true; window.requestAnimationFrame(paintParallax); }
+      }, { passive: true });
+    }
+
+    // Step count for the "More work" label type-on.
+    document.querySelectorAll(".wg-title").forEach(function (t) {
+      t.style.setProperty("--n", String(Math.max(8, t.textContent.trim().length)));
+    });
   } else {
     root.classList.remove("js");
   }
