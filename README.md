@@ -40,7 +40,7 @@ Everything lives in `index.html`:
   <li><a href="https://github.com/synthalorian/REPO">REPO</a><span class="w-desc">One-line description.</span><span class="w-lang">Rust</span></li>
   ```
   Update the number in `<span class="wg-count">` and the "N more public repositories" line if you add or remove entries.
-- **Skyrim mods**: `<section id="mods">`. A spec panel, then two waves of five `<article class="card panel mod-card">` cards. The
+- **Skyrim mods**: `<section id="mods">`. A spec panel, then three waves of five `<article class="card panel mod-card">` cards. The
   first card of each wave has `is-lead` (spans two columns, art beside the text, three bullet points). Each card links to its Nexus
   page and GitHub repo. Thumbnails live in `assets/img/mods/<repo>.webp` and `.jpg`, 640×360, lazy-loaded. Cards say "early beta"
   instead of a version number on purpose, so they don't go stale when a mod is updated. The mod repos are not repeated in "More work".
