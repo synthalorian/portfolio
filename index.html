@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>synth — game engines, audio tools &amp; AI agent tooling</title>
-  <meta name="description" content="Portfolio of synth (synthalorian): open-source game engines, synthesizers and audio tools, AI agent tooling, security utilities, and offline-first apps. Founder of Blackshield Company.">
+  <meta name="description" content="Portfolio of synth (synthalorian): open-source game engines, synthesizers and audio tools, AI agent tooling, security utilities, offline-first apps, and a fifteen-mod Skyrim series. Founder of Blackshield Company.">
   <meta name="author" content="synth">
   <meta name="theme-color" content="#101014">
   <meta name="color-scheme" content="dark">
@@ -31,7 +31,7 @@
   <script>(function(d){var r=d.documentElement;r.classList.remove("no-js");if("IntersectionObserver"in window&&window.matchMedia&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){r.classList.add("js");setTimeout(function(){if(!window.__synthReveal)r.classList.remove("js")},3000)}})(document);</script>
   <link rel="preload" href="/assets/fonts/cinzel-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=38d4d51">
+  <link rel="stylesheet" href="/assets/css/style.css?v=b76700d">
 
   <script type="application/ld+json">
   {
@@ -48,9 +48,10 @@
     "sameAs": [
       "https://github.com/synthalorian",
       "https://github.com/Blackshield-Company",
-      "https://synthalorian.github.io/"
+      "https://synthalorian.github.io/",
+      "https://www.nexusmods.com/profile/synthalorian"
     ],
-    "knowsAbout": ["Rust", "C++", "Flutter", "Game engines", "Audio DSP", "AI agents", "Digital forensics"]
+    "knowsAbout": ["Rust", "C++", "Flutter", "Game engines", "Audio DSP", "AI agents", "Digital forensics", "Skyrim modding"]
   }
   </script>
 </head>
@@ -71,6 +72,7 @@
       <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M3 5.5h18v13H3z"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="m3.5 6 8.5 7 8.5-7"/></symbol>
       <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 2.5 20 4.6V11c0 5-3.3 8.5-8 10.5C7.3 19.5 4 16 4 11V4.6Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 7v10M8 10.5h8"/></symbol>
       <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3Z"/></symbol>
+      <symbol id="i-sword" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M19.5 3.5 20.5 4.5 11 14l-1-1Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="m6.5 13.5 4 4M8.5 15.5 4 20M3.5 19.5l1 1"/></symbol>
       <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M5 12h13M13 6l6 6-6 6"/></symbol>
     </defs>
   </svg>
@@ -91,6 +93,7 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#work">Work</a></li>
+          <li><a href="#mods">Mods</a></li>
           <li><a href="#stack">Stack</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -154,7 +157,7 @@
             <p><strong>Open to collaborators and new roles</strong> in game tech, audio software, AI developer tooling, and security. If something here overlaps with what you're building, <a href="#contact">get in touch</a>.</p>
           </div>
           <ul class="focus-list reveal">
-            <li><span class="fi">/01</span><h3>Game engines &amp; games</h3><p>VoidEngine (Odin + SDL2), Chronos Engine (Rust ECS), emulators, renderers.</p></li>
+            <li><span class="fi">/01</span><h3>Game engines &amp; games</h3><p>VoidEngine (Odin + SDL2), Chronos Engine (Rust ECS), emulators, renderers, and a fifteen-mod <a href="#mods">Skyrim series</a>.</p></li>
             <li><span class="fi">/02</span><h3>Audio &amp; DSP</h3><p>Open Synth, Open Amp, Kicks, a Zig tracker, STM32 synth firmware.</p></li>
             <li><span class="fi">/03</span><h3>AI agent tooling</h3><p>OpenShield, Hermes Wingman, OpenClaw Pincers, AgentBench.</p></li>
             <li><span class="fi">/04</span><h3>Security &amp; forensics</h3><p>wireclaw, chain-of-custody and evidence tooling under Blackshield Company.</p></li>
@@ -448,12 +451,390 @@
       </div>
     </section>
 
+    <!-- ============================== MODS ============================== -->
+    <section class="section" id="mods" aria-labelledby="mods-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow"><span class="num">03</span> Modding</p>
+            <h2 id="mods-title">Mods for Skyrim</h2>
+          </div>
+          <p>Fifteen mods for The Elder Scrolls V: Skyrim Special Edition, built as one series of contracts, oaths, and steel.</p>
+        </div>
+
+        <div class="mods-brief panel reveal">
+          <div class="mods-brief-copy">
+            <p>Every mod stands on its own, and all fifteen are designed to run together: separate records, prefixes and scripts, no vanilla record edits, and a fifteen-plugin compatibility check that loads them side by side found no conflicts. <strong>Blackshield Codex</strong> is the optional bridge that makes the first five notice each other, and the third wave notices the earlier mods at runtime without requiring any of them.</p>
+            <div class="mods-actions">
+              <a class="btn btn-primary" href="https://www.nexusmods.com/profile/synthalorian">All mods on Nexus <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+          <dl class="mods-specs">
+            <div><dt>Game</dt><dd>Skyrim Special Edition / Anniversary Edition 1.6 (1.5.97 works too)</dd></div>
+            <div><dt>Plugins</dt><dd>15, all ESL-flagged, so none take a full load-order slot</dd></div>
+            <div><dt>Requires</dt><dd>Base game only. No SKSE, SkyUI, DLC or Creation Club. The Codex needs the first five.</dd></div>
+            <div><dt>Platforms</dt><dd>Windows, or Linux through Proton</dd></div>
+            <div><dt>Status</dt><dd>Early beta, not yet playtested in game. Bug reports welcome on Nexus or GitHub.</dd></div>
+          </dl>
+        </div>
+
+        <div class="mods-wave reveal">
+          <h3>First wave</h3>
+          <p>The core five: a company, a ledger, a hunt, an oath, a forge.</p>
+        </div>
+        <div class="cards mod-cards">
+          <article class="card panel mod-card reveal is-lead" id="mod-blackshield-company" aria-labelledby="m1">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194203" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/blackshield-company.webp" type="image/webp">
+                <img src="/assets/img/mods/blackshield-company.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">01</span><span class="card-kind">Faction · Contracts</span></div>
+              <h3 id="m1"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194203">Blackshield Company</a></h3>
+              <p class="card-desc">Join a mercenary company, take radiant contracts across Skyrim&#x27;s holds, and rise from Recruit to Commander.</p>
+              <ul class="card-points">
+                <li>Three contract types: clear a camp, hunt a marked target, hold a fort against raider waves</li>
+                <li>Five ranks with company gear, a shared treasury, and a sellsword to call on</li>
+                <li>Everything runs through a ledger power and letters, no new voice acting</li>
+              </ul>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194203" aria-label="Blackshield Company on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/blackshield-company" aria-label="Blackshield Company source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel mod-card reveal" id="mod-bounties-of-oblivion" aria-labelledby="m2">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194204" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/bounties-of-oblivion.webp" type="image/webp">
+                <img src="/assets/img/mods/bounties-of-oblivion.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">02</span><span class="card-kind">Daedric tasks</span></div>
+              <h3 id="m2"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194204">Daedric Ledger: Bounties of Oblivion</a></h3>
+              <p class="card-desc">Sign a black ledger and take work from eight Daedric Princes. Earn their favor, unlock blessings, and play rivals against each other.</p>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194204" aria-label="Daedric Ledger: Bounties of Oblivion on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/bounties-of-oblivion" aria-label="Daedric Ledger: Bounties of Oblivion source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel mod-card reveal" id="mod-contract-hunter" aria-labelledby="m3">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194206" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/contract-hunter.webp" type="image/webp">
+                <img src="/assets/img/mods/contract-hunter.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">03</span><span class="card-kind">Bounty hunting</span></div>
+              <h3 id="m3"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194206">Contract Hunter</a></h3>
+              <p class="card-desc">Solo bounty hunting: 22 named outlaws at real hideouts, hard deadlines, and jarls who remember who kept their roads clean.</p>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194206" aria-label="Contract Hunter on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/contract-hunter" aria-label="Contract Hunter source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel mod-card reveal" id="mod-steel-oath" aria-labelledby="m4">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194208" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/steel-oath.webp" type="image/webp">
+                <img src="/assets/img/mods/steel-oath.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">04</span><span class="card-kind">Vows · Blessings</span></div>
+              <h3 id="m4"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194208">Steel Oath</a></h3>
+              <p class="card-desc">Swear a warrior&#x27;s vow and keep it. The longer it holds, the stronger its blessing grows; break it and you&#x27;re marked an oathbreaker.</p>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194208" aria-label="Steel Oath on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/steel-oath" aria-label="Steel Oath source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel mod-card reveal" id="mod-ember-smithing" aria-labelledby="m5">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194210" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/ember-smithing.webp" type="image/webp">
+                <img src="/assets/img/mods/ember-smithing.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">05</span><span class="card-kind">Crafting</span></div>
+              <h3 id="m5"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194210">Ember Smithing</a></h3>
+              <p class="card-desc">Put 42 vanilla weapons back in the fire for three tiers of heat-tempering, and engrave armor with protective runes.</p>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194210" aria-label="Ember Smithing on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/ember-smithing" aria-label="Ember Smithing source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mods-wave reveal">
+          <h3>Second wave</h3>
+          <p>A questline, the bridge, and three more for the road: banners, ambushes, and hired steel.</p>
+        </div>
+        <div class="cards mod-cards">
+          <article class="card panel mod-card reveal is-lead" id="mod-the-gray-mane-debt" aria-labelledby="m6">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194214" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/the-gray-mane-debt.webp" type="image/webp">
+                <img src="/assets/img/mods/the-gray-mane-debt.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">06</span><span class="card-kind">Questline</span></div>
+              <h3 id="m6"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194214">The Gray-Mane Debt</a></h3>
+              <p class="card-desc">A short questline for Eorlund Gray-Mane: someone stole the pattern every Skyforge blade is folded by, and the trail leads to an old debt.</p>
+              <ul class="card-points">
+                <li>Unvoiced dialogue choices with Eorlund and a Whiterun moneylender</li>
+                <li>Three endings: pay the debt, settle it with steel, or sell Eorlund out</li>
+                <li>No vanilla records edited, not even Eorlund&#x27;s</li>
+              </ul>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194214" aria-label="The Gray-Mane Debt on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/the-gray-mane-debt" aria-label="The Gray-Mane Debt source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel mod-card reveal" id="mod-blackshield-codex" aria-labelledby="m7">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194216" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/blackshield-codex.webp" type="image/webp">
+                <img src="/assets/img/mods/blackshield-codex.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">07</span><span class="card-kind">Integration</span></div>
+              <h3 id="m7"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194216">Blackshield Codex</a></h3>
+              <p class="card-desc">The optional bridge for the first five: oaths earn company renown, Daedric favor raises bounty pay, and the forge upgrades Blackshield gear.</p>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Needs 01–05</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194216" aria-label="Blackshield Codex on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/blackshield-codex" aria-label="Blackshield Codex source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel mod-card reveal" id="mod-war-banners" aria-labelledby="m8">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194220" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/war-banners.webp" type="image/webp">
+                <img src="/assets/img/mods/war-banners.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">08</span><span class="card-kind">Crafting · Combat</span></div>
+              <h3 id="m8"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194220">War Banners</a></h3>
+              <p class="card-desc">Craft a war standard at a tanning rack, plant it in the field, and rally yourself and your followers while you hold close.</p>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194220" aria-label="War Banners on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/war-banners" aria-label="War Banners source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel mod-card reveal" id="mod-roadwarden" aria-labelledby="m9">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194222" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/roadwarden.webp" type="image/webp">
+                <img src="/assets/img/mods/roadwarden.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">09</span><span class="card-kind">Road encounters</span></div>
+              <h3 id="m9"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194222">Roadwarden</a></h3>
+              <p class="card-desc">Four rare, level-scaled road encounters: highwaymen ambushes, merchants under attack, deserters demanding a toll, and wounded couriers.</p>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194222" aria-label="Roadwarden on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/roadwarden" aria-label="Roadwarden source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel mod-card reveal" id="mod-sellsword-roster" aria-labelledby="m10">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194224" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/sellsword-roster.webp" type="image/webp">
+                <img src="/assets/img/mods/sellsword-roster.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">10</span><span class="card-kind">Followers</span></div>
+              <h3 id="m10"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194224">Sellsword Roster</a></h3>
+              <p class="card-desc">Eight named sellswords with their own backgrounds, traits and daily wages. A few are looking for work each week; stop paying and they walk.</p>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194224" aria-label="Sellsword Roster on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/sellsword-roster" aria-label="Sellsword Roster source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mods-wave reveal">
+          <h3>Third wave</h3>
+          <p>Five quests: a turncoat, a torn ledger, an oathbreaker, a champion&#x27;s forge, and iron from the barrows.</p>
+        </div>
+        <div class="cards mod-cards">
+          <article class="card panel mod-card reveal is-lead" id="mod-the-turncoat-contract" aria-labelledby="m11">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194333" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/the-turncoat-contract.webp" type="image/webp">
+                <img src="/assets/img/mods/the-turncoat-contract.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">11</span><span class="card-kind">Questline · Blackshield</span></div>
+              <h3 id="m11"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194333">The Turncoat Contract</a></h3>
+              <p class="card-desc">A Blackshield payroll wagon was ambushed by raiders who knew the route. Unmask the turncoat in the company&#x27;s own ranks and decide what he&#x27;s owed.</p>
+              <ul class="card-points">
+                <li>Follow the ambush to a raider captain and the sealed orders that name the traitor</li>
+                <li>Three endings: arrest him, kill him, or take his bribe</li>
+                <li>Your company blade is reforged twice, and mercy or judgement sets its final edge</li>
+              </ul>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194333" aria-label="The Turncoat Contract on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/the-turncoat-contract" aria-label="The Turncoat Contract source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel mod-card reveal" id="mod-the-ledger-of-ash" aria-labelledby="m12">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194334" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/the-ledger-of-ash.webp" type="image/webp">
+                <img src="/assets/img/mods/the-ledger-of-ash.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">12</span><span class="card-kind">Relic hunt · Daedric</span></div>
+              <h3 id="m12"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194334">The Ledger of Ash</a></h3>
+              <p class="card-desc">A page torn from the Daedric Ledger, its debts sealed in three shards across three holds. Bind them into an amulet, forge an axe and face the Collector, or break them.</p>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194334" aria-label="The Ledger of Ash on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/the-ledger-of-ash" aria-label="The Ledger of Ash source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel mod-card reveal" id="mod-oathbreakers-price" aria-labelledby="m13">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194335" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/oathbreakers-price.webp" type="image/webp">
+                <img src="/assets/img/mods/oathbreakers-price.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">13</span><span class="card-kind">Manhunt · Oaths</span></div>
+              <h3 id="m13"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194335">Oathbreaker&#x27;s Price</a></h3>
+              <p class="card-desc">Hunt the knight who broke his oath and left nine pilgrims to die. Duel him, take his surrender, or have him swear again, for legendary plate, a shield, or a reforged greatsword.</p>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194335" aria-label="Oathbreaker&#x27;s Price on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/oathbreakers-price" aria-label="Oathbreaker&#x27;s Price source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel mod-card reveal" id="mod-champions-reforge" aria-labelledby="m14">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194336" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/champions-reforge.webp" type="image/webp">
+                <img src="/assets/img/mods/champions-reforge.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">14</span><span class="card-kind">Smithing quest</span></div>
+              <h3 id="m14"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194336">Champion&#x27;s Reforge</a></h3>
+              <p class="card-desc">Recover Adrianne Avenicci&#x27;s stolen notes and forge an upgradeable champion&#x27;s harness for the Legion or the Stormcloaks. Works on the base game; if you own the Anniversary Edition Civil War Champions armor, it strengthens that too, but it isn&#x27;t required.</p>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194336" aria-label="Champion&#x27;s Reforge on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/champions-reforge" aria-label="Champion&#x27;s Reforge source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card panel mod-card reveal" id="mod-barrow-iron-pact" aria-labelledby="m15">
+            <a class="mod-thumb" href="https://www.nexusmods.com/skyrimspecialedition/mods/194337" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="/assets/img/mods/barrow-iron-pact.webp" type="image/webp">
+                <img src="/assets/img/mods/barrow-iron-pact.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+              </picture>
+            </a>
+            <div class="mod-body">
+              <div class="card-top"><span class="card-index">15</span><span class="card-kind">Ancient armor</span></div>
+              <h3 id="m15"><a href="https://www.nexusmods.com/skyrimspecialedition/mods/194337">The Barrow-Iron Pact</a></h3>
+              <p class="card-desc">Take barrow-iron from a Hollow Warden and forge plate or a greatsword you can later awaken with dragon bone, or honor the pact and return the iron to the dead.</p>
+              <div class="card-foot">
+                <p class="card-meta"><span class="lang">ESL</span><span>Early beta</span></p>
+                <div class="card-links">
+                  <a href="https://www.nexusmods.com/skyrimspecialedition/mods/194337" aria-label="The Barrow-Iron Pact on Nexus Mods">Nexus <span aria-hidden="true">→</span></a>
+                  <a href="https://github.com/synthalorian/barrow-iron-pact" aria-label="The Barrow-Iron Pact source on GitHub">Source <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="stack-note">All fifteen mods are early beta and have not been playtested in game yet. If something breaks, please report it on the mod's Nexus page or GitHub repo.</p>
+      </div>
+    </section>
+
     <!-- ============================== STACK ============================== -->
     <section class="section" id="stack" aria-labelledby="stack-title">
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <p class="eyebrow"><span class="num">03</span> Skills</p>
+            <p class="eyebrow"><span class="num">04</span> Skills</p>
             <h2 id="stack-title">Stack</h2>
           </div>
           <p>Taken from the public repositories above — what the code is actually written in.</p>
@@ -490,6 +871,7 @@
               <li>Cross-platform mobile &amp; desktop apps</li>
               <li>Terminal UIs &amp; CLIs</li>
               <li>Embedded audio firmware</li>
+              <li>Skyrim modding: Papyrus &amp; ESL plugins</li>
             </ul>
           </div>
         </div>
@@ -501,7 +883,7 @@
       <div class="wrap">
         <div class="contact-panel panel reveal">
           <div class="contact-copy">
-            <p class="eyebrow"><span class="num">04</span> Contact</p>
+            <p class="eyebrow"><span class="num">05</span> Contact</p>
             <h2 id="contact-title">Let's build something that holds.</h2>
             <p>Collaborations, contributions, contract work, or a full-time role — email is the fastest way to reach me. Issues and pull requests on any repo are welcome too.</p>
           </div>
@@ -509,6 +891,7 @@
             <li><a href="mailto:synthalorian@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg><span><span class="cl-label">Email</span><span class="cl-value">synthalorian@gmail.com</span></span><span class="cl-arrow" aria-hidden="true">→</span></a></li>
             <li><a href="https://github.com/synthalorian"><svg aria-hidden="true"><use href="#i-github"/></svg><span><span class="cl-label">GitHub</span><span class="cl-value">github.com/synthalorian</span></span><span class="cl-arrow" aria-hidden="true">→</span></a></li>
             <li><a href="https://github.com/Blackshield-Company"><svg aria-hidden="true"><use href="#i-shield"/></svg><span><span class="cl-label">Organization</span><span class="cl-value">Blackshield Company</span></span><span class="cl-arrow" aria-hidden="true">→</span></a></li>
+            <li><a href="https://www.nexusmods.com/profile/synthalorian"><svg aria-hidden="true"><use href="#i-sword"/></svg><span><span class="cl-label">Skyrim mods</span><span class="cl-value">Nexus Mods profile</span></span><span class="cl-arrow" aria-hidden="true">→</span></a></li>
           </ul>
         </div>
       </div>
@@ -521,11 +904,12 @@
       <ul class="footer-links">
         <li><a href="https://github.com/synthalorian">GitHub</a></li>
         <li><a href="https://github.com/Blackshield-Company">Blackshield Company</a></li>
+        <li><a href="https://www.nexusmods.com/profile/synthalorian">Nexus Mods</a></li>
         <li><a href="#top">Back to top ↑</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="/assets/js/main.js?v=38d4d51" defer></script>
+  <script src="/assets/js/main.js?v=b76700d" defer></script>
 </body>
 </html>
