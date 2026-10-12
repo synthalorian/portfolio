@@ -32,7 +32,7 @@ Paths are root-relative (`/assets/...`), so serve from the repo root and don't o
 
 Everything lives in `index.html`:
 
-- **Featured projects**: the six `<article class="card panel">` blocks under `<section id="work">`. To swap one, copy a card and
+- **Featured projects**: the six `<article class="card panel">` blocks under `<section id="work">`. A seventh, full-width card (`#project-void-mercs-demo`) features the Void Mercs free demo; it reuses the `mod-card is-lead` layout with a 640×360 thumbnail in `assets/img/projects/` (WebP + JPEG, lazy-loaded). To swap one, copy a card and
   edit the title, repo link, description, three bullet points, tags, and the meta line (language · stars · version or date).
   Each card has an `id` (e.g. `#project-voidengine`) so you can deep-link to it.
 - **More work**: the `<details class="work-group">` blocks. Each repo is one line:
