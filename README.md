@@ -1,3 +1,5 @@
+![portfolio](.github/preview.png)
+
 # synth — portfolio
 
 Personal portfolio for **synth** ([@synthalorian](https://github.com/synthalorian)).
