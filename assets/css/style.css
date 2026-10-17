@@ -1070,8 +1070,21 @@ h1, h2, h3 {
 .footer-inner svg { width: 16px; height: 16px; }
 /* Knight A, the Blackshield Company mascot (animated SVG; holds still under reduced motion). */
 .footer-knight { width: 48px; height: 42px; image-rendering: pixelated; }
-.card-mascot { position: absolute; top: 3.1rem; right: 1.4rem; width: 64px; height: 56px; image-rendering: pixelated; }
-#project-openshield { position: relative; }
+/* Fixed in the bottom-left corner on every page; decorative, never takes clicks. */
+.corner-knight {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 40;
+  width: 80px;
+  height: 70px;
+  image-rendering: pixelated;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .55));
+}
+@media (max-width: 860px) { .corner-knight { width: 64px; height: 56px; left: .6rem; bottom: .6rem; } }
+@media (max-width: 480px) { .corner-knight { display: none; } }
 .footer-inner a { color: var(--steel-light); text-decoration: none; }
 .footer-inner a:hover { color: var(--white); }
 .footer-links { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
@@ -1439,7 +1452,7 @@ main {
 }
 
 @media print {
-  .site-header, .hero-portrait, .more-toggle { display: none; }
+  .site-header, .hero-portrait, .more-toggle, .corner-knight { display: none; }
   body { background: #fff; color: #000; }
   h1, h2, h3, a { color: #000; }
 }
