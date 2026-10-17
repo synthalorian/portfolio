@@ -1070,7 +1070,7 @@ h1, h2, h3 {
 .footer-inner svg { width: 16px; height: 16px; }
 /* Knight A, the Blackshield Company mascot (animated SVG; holds still under reduced motion). */
 .footer-knight { width: 48px; height: 42px; image-rendering: pixelated; }
-/* Fixed in the bottom-left corner on every page; decorative, never takes clicks. */
+/* Knight A in the bottom-left corner of every page. A button: hover, focus, click. */
 .corner-knight {
   position: fixed;
   left: 1rem;
@@ -1078,13 +1078,30 @@ h1, h2, h3 {
   z-index: 40;
   width: 80px;
   height: 70px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  line-height: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.corner-knight img {
+  width: 100%;
+  height: 100%;
   image-rendering: pixelated;
   pointer-events: none;
   user-select: none;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .55));
+  transition: transform .18s ease-out;
 }
+.corner-knight:hover img, .corner-knight:focus-visible img { transform: translateY(-3px); }
+.corner-knight:focus { outline: none; }
+.corner-knight:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
 @media (max-width: 860px) { .corner-knight { width: 64px; height: 56px; left: .6rem; bottom: .6rem; } }
 @media (max-width: 480px) { .corner-knight { display: none; } }
+@media (prefers-reduced-motion: reduce) { .corner-knight img { transition: none; } .corner-knight:hover img, .corner-knight:focus-visible img { transform: none; } }
+@media print { .corner-knight { display: none; } }
 .footer-inner a { color: var(--steel-light); text-decoration: none; }
 .footer-inner a:hover { color: var(--white); }
 .footer-links { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }

@@ -31,7 +31,7 @@
   <script>(function(d){var r=d.documentElement;r.classList.remove("no-js");if("IntersectionObserver"in window&&window.matchMedia&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){r.classList.add("js");setTimeout(function(){if(!window.__synthReveal)r.classList.remove("js")},3000)}})(document);</script>
   <link rel="preload" href="/assets/fonts/cinzel-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=knight-corner">
+  <link rel="stylesheet" href="/assets/css/style.css?v=knight-interactive">
 
   <script type="application/ld+json">
   {
@@ -938,7 +938,8 @@
     </div>
   </footer>
 
-  <img class="corner-knight" src="/assets/img/knight/knight-working.svg" width="80" height="70" alt="" aria-hidden="true" decoding="async">
+  <button type="button" class="corner-knight" data-knight-base="/assets/img/knight/" aria-label="Knight A, the Blackshield Company mascot. Press for a sword swing."><img src="/assets/img/knight/knight-idle.svg" width="80" height="70" alt="" decoding="async"></button>
+  <script src="/assets/js/knight.js?v=knight-interactive" defer></script>
   <script src="/assets/js/main.js?v=b76700d" defer></script>
 </body>
 </html>
