@@ -2,7 +2,7 @@
 
 # synth — portfolio
 
-Personal portfolio for **synth** ([@synthalorian](https://github.com/synthalorian)).
+Personal portfolio for **synth**, the synthalorian ([@synthalorian](https://github.com/synthalorian)). Synthwave '84 livery: deep purple night, magenta and cyan neon, a striped sunset and a perspective grid.
 Plain static files — HTML, CSS, a little vanilla JS. No build step, no frameworks, no trackers, no runtime API calls.
 
 ## Structure
@@ -10,12 +10,15 @@ Plain static files — HTML, CSS, a little vanilla JS. No build step, no framewo
 ```
 index.html              the whole site (all project data is hardcoded here)
 404.html                not-found page
-favicon.svg             shield + claw mark
-apple-touch-icon.png    180×180 icon
+favicon.svg             the pixel synthalorian (crisp SVG pixels)
+apple-touch-icon.png    180×180 cockpit avatar
 assets/css/style.css    all styles (palette variables at the top)
 assets/js/main.js       mobile nav, section highlight, scroll reveal, "More work" expand/collapse
-assets/fonts/           self-hosted Cinzel, Inter, JetBrains Mono (SIL OFL 1.1)
-assets/img/             avatar + Open Graph card
+assets/js/sprite.js     the corner synthalorian (idle, walks on hover/focus/click)
+assets/fonts/           self-hosted 3270 Nerd Font (Latin subset, see 3270-NERD-FONT-LICENSE.txt)
+assets/img/             cockpit avatar (460/920, WebP + JPEG), gunship cover (768/1280), Open Graph card
+assets/img/sprite/      pixel synthalorian: idle/walk GIFs + static PNGs (reduced-motion fallback)
+assets/img/knight/      Knight A, the Blackshield Company mascot (shown only on the studio link)
 assets/img/mods/        Skyrim mod cover thumbnails (640×360, WebP + JPEG fallback)
 _headers                Cloudflare Pages security and cache headers
 robots.txt, sitemap.xml
@@ -55,12 +58,14 @@ Data came from public GitHub metadata and READMEs as of October 2026. Star count
 
 All motion is CSS (transform, opacity, clip-path only) with small helpers in `assets/js/main.js`:
 
-- **Hero intro** (~1.1s, once per load): the shield mark strikes in, a blood slash cuts the name in, a steel glint passes over it, and the rest of the hero follows.
+- **Hero intro** (~1.1s, once per load): a neon slash cuts the name in, a glint passes over it, and the rest of the hero follows.
+- **Hero sky**: the gunship cover under a deep-purple scrim, a striped sunset behind the avatar, and a perspective grid rolling toward you (transform only).
+- **Corner sprite**: the pixel synthalorian idles in the bottom-left corner and walks on hover, focus, or click. Under reduced motion the `<picture>` serves the static PNG.
 - **Section headings**: a diagonal cut with a spark at the edge, then the red rule draws in.
 - **Project cards**: lock in with a slight rotation and settle. On hover or keyboard focus they lift, glow, and get one steel shine pass.
 - **"More work"**: groups reveal on scroll and their labels type on.
 - **Scroll progress**: a rail on the left edge (a top bar on small screens).
-- **Hero smoke and embers**: drift a few pixels with the mouse (fine pointers only) and pause when off screen.
+- **Hero sparks**: drift a few pixels with the mouse (fine pointers only) and pause when off screen.
 
 Everything is disabled under `prefers-reduced-motion`, and nothing is hidden without JavaScript.
 
@@ -79,3 +84,10 @@ whenever `style.css` or `main.js` changes (any fresh value works; the current on
 Connect this repo in Cloudflare Pages. Use framework preset **None** and leave the build command **empty**. Set the output directory to `/`.
 If your project ends up with a different `*.pages.dev` address (or a custom domain), replace `https://synthalorian.pages.dev/`
 in `index.html` (canonical, Open Graph, JSON-LD), `robots.txt`, and `sitemap.xml`.
+
+## Font and art
+
+- **3270 Nerd Font** from the [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) v3.5.1 release, subset to Latin and punctuation and
+  converted to WOFF2 (`3270-nerd-font.woff2`, ~12 KB). It loads with `font-display: optional` plus a preload, so text never reflows when
+  it arrives. Its license ships next to it in `assets/fonts/3270-NERD-FONT-LICENSE.txt`.
+- The avatar, gunship cover and pixel sprite are AI-assisted art, credited in the footer.

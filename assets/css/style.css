@@ -4,45 +4,35 @@
    ========================================================================== */
 
 @font-face {
-  font-family: "Cinzel";
-  src: url("../fonts/cinzel-var.woff2") format("woff2");
-  font-weight: 400 900;
+  font-family: "3270 Nerd Font";
+  src: url("../fonts/3270-nerd-font.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Inter";
-  src: url("../fonts/inter-var.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("../fonts/jetbrainsmono-var.woff2") format("woff2");
-  font-weight: 100 800;
-  font-style: normal;
-  font-display: swap;
+  /* optional + preload: the font is used on first paint or not at all, so text never reflows when it arrives */
+  font-display: optional;
 }
 
 :root {
-  --bg: #101014;
-  --panel: #15151a;
-  --panel-2: #1a1a20;
-  --rule: #2a2c32;
-  --rule-strong: #3a3d44;
-  --steel: #8f959c;
-  --steel-light: #b4b9bf;
-  --bone: #d8d3c8;
-  --bone-dim: #aaa59b;
-  --blood: #c1121f;
-  --blood-deep: #8e0d17;
-  --ember: #e8743b;
-  --white: #f4f1ea;
+  --bg: #140a26;
+  --panel: #1c1033;
+  --panel-2: #24143f;
+  --rule: #3b2563;
+  --rule-strong: #5a3d8f;
+  --steel: #b9a8e0;
+  --steel-light: #d8ccf5;
+  --bone: #efe7ff;
+  --bone-dim: #c9bbe8;
+  --blood: #ff4fa3;
+  --blood-deep: #c2287a;
+  --ember: #ff9a3c;
+  --white: #fff7ff;
+  --cyan: #4fe3f0;
+  --sunset: #ff9a3c;
+  --ink: #140a26;
 
-  --font-display: "Cinzel", "Trajan Pro", Georgia, "Times New Roman", serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-display: "3270 Nerd Font", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --font-body: "3270 Nerd Font", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --font-mono: "3270 Nerd Font", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 
   --wrap: 1180px;
   --cut: 14px;
@@ -67,8 +57,8 @@ body {
   margin: 0;
   background-color: var(--bg);
   background-image:
-    radial-gradient(1200px 600px at 85% -10%, rgba(193, 18, 31, .10), transparent 60%),
-    radial-gradient(900px 500px at -10% 30%, rgba(143, 149, 156, .05), transparent 60%),
+    radial-gradient(1200px 600px at 85% -10%, rgba(255, 79, 163, .10), transparent 60%),
+    radial-gradient(900px 500px at -10% 30%, rgba(79, 227, 240, .05), transparent 60%),
     /* faint grain, tiled so it scrolls with the page */
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 .11 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: no-repeat, no-repeat, repeat;
@@ -86,7 +76,7 @@ img, svg { display: block; max-width: 100%; }
 
 a {
   color: var(--bone);
-  text-decoration-color: rgba(193, 18, 31, .7);
+  text-decoration-color: rgba(255, 79, 163, .7);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   transition: color .2s var(--ease), text-decoration-color .2s var(--ease);
@@ -98,7 +88,7 @@ a:hover { color: var(--white); text-decoration-color: var(--ember); }
   outline-offset: 3px;
 }
 
-::selection { background: var(--blood); color: var(--white); }
+::selection { background: var(--blood); color: var(--ink); }
 
 .wrap {
   width: min(100% - 2.5rem, var(--wrap));
@@ -119,7 +109,7 @@ a:hover { color: var(--white); text-decoration-color: var(--ember); }
   z-index: 200;
   padding: .6rem 1rem;
   background: var(--blood);
-  color: var(--white);
+  color: var(--ink);
   font-family: var(--font-mono);
   font-size: .85rem;
   text-decoration: none;
@@ -177,7 +167,7 @@ h1, h2, h3 {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(16, 16, 20, .82);
+  background: rgba(20, 10, 38, .82);
   -webkit-backdrop-filter: blur(10px) saturate(120%);
   backdrop-filter: blur(10px) saturate(120%);
   border-bottom: 1px solid var(--rule);
@@ -273,14 +263,14 @@ h1, h2, h3 {
   transition: background .2s var(--ease), color .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
 }
 .btn svg { width: 16px; height: 16px; flex: none; }
-.btn-primary { background: var(--blood); color: var(--white); }
-.btn-primary:hover { background: #d4182a; color: var(--white); box-shadow: 0 0 28px rgba(193, 18, 31, .45); }
+.btn-primary { background: var(--blood); color: var(--ink); }
+.btn-primary:hover { background: #ff6fb5; color: var(--ink); box-shadow: 0 0 28px rgba(255, 79, 163, .45); }
 .btn-ghost {
   background: rgba(255, 255, 255, .02);
   color: var(--bone);
   border-color: var(--rule-strong);
 }
-.btn-ghost:hover { border-color: var(--steel); color: var(--white); background: rgba(143, 149, 156, .08); }
+.btn-ghost:hover { border-color: var(--steel); color: var(--white); background: rgba(79, 227, 240, .08); }
 
 /* ---------- Hero ---------- */
 
@@ -395,9 +385,9 @@ h1, h2, h3 {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(38% 32% at 28% 62%, rgba(193, 18, 31, .16), transparent 70%),
-    radial-gradient(34% 28% at 72% 30%, rgba(143, 149, 156, .07), transparent 70%),
-    radial-gradient(28% 24% at 62% 84%, rgba(232, 116, 59, .07), transparent 70%);
+    radial-gradient(38% 32% at 28% 62%, rgba(255, 79, 163, .16), transparent 70%),
+    radial-gradient(34% 28% at 72% 30%, rgba(79, 227, 240, .07), transparent 70%),
+    radial-gradient(28% 24% at 62% 84%, rgba(255, 154, 60, .07), transparent 70%);
   opacity: .7;
   animation: smoke-drift 26s ease-in-out infinite alternate;
   will-change: transform, opacity;
@@ -415,7 +405,7 @@ h1, h2, h3 {
   width: var(--s, 3px);
   height: var(--s, 3px);
   border-radius: 50%;
-  background: radial-gradient(circle, #ffb27a 0, var(--ember) 45%, rgba(232, 116, 59, 0) 72%);
+  background: radial-gradient(circle, #ffd29a 0, var(--ember) 45%, rgba(255, 154, 60, 0) 72%);
   opacity: 0;
   animation: ember-rise var(--t, 11s) linear var(--d, 0s) infinite;
   will-change: transform, opacity;
@@ -444,7 +434,7 @@ h1, h2, h3 {
 .portrait-frame {
   position: relative;
   padding: 10px;
-  background: linear-gradient(160deg, #2b2e34, #121216 45%, #2a2c31);
+  background: linear-gradient(160deg, #3b2563, #1c1033 45%, #3b2563);
   clip-path: polygon(28px 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%, 0 28px);
 }
 .portrait-frame img {
@@ -459,7 +449,7 @@ h1, h2, h3 {
   content: "";
   position: absolute;
   inset: 10px;
-  background: linear-gradient(180deg, transparent 55%, rgba(16, 16, 20, .55));
+  background: linear-gradient(180deg, transparent 55%, rgba(20, 10, 38, .55));
   clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
   pointer-events: none;
 }
@@ -570,18 +560,18 @@ h1, h2, h3 {
 }
 /* Hover/focus glow lives on an overlay so only its opacity animates */
 .card::after {
-  --corner-line: transparent calc(50% - 1px), rgba(232, 116, 59, .6) calc(50% - 1px), rgba(232, 116, 59, .6) calc(50% + 1px), transparent calc(50% + 1px);
+  --corner-line: transparent calc(50% - 1px), rgba(255, 154, 60, .6) calc(50% - 1px), rgba(255, 154, 60, .6) calc(50% + 1px), transparent calc(50% + 1px);
   content: "";
   position: absolute;
   inset: -1px;
   pointer-events: none;
-  border: 1px solid rgba(193, 18, 31, .6);
+  border: 1px solid rgba(255, 79, 163, .6);
   background:
     var(--corners),
-    radial-gradient(420px 200px at 0% 0%, rgba(193, 18, 31, .11), transparent 70%);
+    radial-gradient(420px 200px at 0% 0%, rgba(255, 79, 163, .11), transparent 70%);
   box-shadow:
-    inset 0 0 0 1px rgba(193, 18, 31, .18),
-    inset 0 0 26px -6px rgba(232, 116, 59, .22);
+    inset 0 0 0 1px rgba(255, 79, 163, .18),
+    inset 0 0 26px -6px rgba(255, 154, 60, .22);
   opacity: 0;
   transition: opacity .2s var(--ease-out);
 }
@@ -829,7 +819,7 @@ h1, h2, h3 {
   padding: clamp(1.5rem, 3.5vw, 2.25rem);
   background:
     var(--corners),
-    radial-gradient(520px 220px at 0% 0%, rgba(193, 18, 31, .10), transparent 70%),
+    radial-gradient(520px 220px at 0% 0%, rgba(255, 79, 163, .10), transparent 70%),
     linear-gradient(180deg, rgba(255, 255, 255, .025), transparent 40%),
     var(--panel);
 }
@@ -897,7 +887,7 @@ h1, h2, h3 {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  box-shadow: inset 0 0 0 1px rgba(143, 149, 156, .22);
+  box-shadow: inset 0 0 0 1px rgba(79, 227, 240, .22);
 }
 .mod-thumb img {
   width: 100%;
@@ -1011,7 +1001,7 @@ h1, h2, h3 {
   padding: clamp(2rem, 5vw, 3.5rem);
   background:
     var(--corners),
-    radial-gradient(600px 260px at 100% 0%, rgba(193, 18, 31, .14), transparent 70%),
+    radial-gradient(600px 260px at 100% 0%, rgba(255, 79, 163, .14), transparent 70%),
     linear-gradient(180deg, rgba(255, 255, 255, .025), transparent 40%),
     var(--panel);
 }
@@ -1026,15 +1016,15 @@ h1, h2, h3 {
   gap: 1rem;
   padding: .95rem 1.1rem;
   border: 1px solid var(--rule-strong);
-  background: rgba(16, 16, 20, .6);
+  background: rgba(20, 10, 38, .6);
   text-decoration: none;
   color: var(--bone);
   transition: border-color .2s var(--ease), background .2s var(--ease), box-shadow .2s var(--ease);
 }
 .contact-links a:hover {
   border-color: var(--blood);
-  background: rgba(193, 18, 31, .08);
-  box-shadow: 0 0 24px -8px rgba(193, 18, 31, .6);
+  background: rgba(255, 79, 163, .08);
+  box-shadow: 0 0 24px -8px rgba(255, 79, 163, .6);
   color: var(--white);
 }
 .contact-links svg { width: 20px; height: 20px; color: var(--steel-light); }
@@ -1069,9 +1059,8 @@ h1, h2, h3 {
 .footer-inner p { margin: 0; display: flex; align-items: center; gap: .6rem; }
 .footer-inner svg { width: 16px; height: 16px; }
 /* Knight A, the Blackshield Company mascot (animated SVG; holds still under reduced motion). */
-.footer-knight { width: 48px; height: 42px; image-rendering: pixelated; }
 /* Knight A in the bottom-left corner of every page. A button: hover, focus, click. */
-.corner-knight {
+.corner-sprite {
   position: fixed;
   left: 1rem;
   bottom: 1rem;
@@ -1086,7 +1075,7 @@ h1, h2, h3 {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-.corner-knight img {
+.corner-sprite img {
   width: 100%;
   height: 100%;
   image-rendering: pixelated;
@@ -1095,13 +1084,13 @@ h1, h2, h3 {
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .55));
   transition: transform .18s ease-out;
 }
-.corner-knight:hover img, .corner-knight:focus-visible img { transform: translateY(-3px); }
-.corner-knight:focus { outline: none; }
-.corner-knight:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
-@media (max-width: 860px) { .corner-knight { width: 64px; height: 56px; left: .6rem; bottom: .6rem; } }
-@media (max-width: 480px) { .corner-knight { display: none; } }
-@media (prefers-reduced-motion: reduce) { .corner-knight img { transition: none; } .corner-knight:hover img, .corner-knight:focus-visible img { transform: none; } }
-@media print { .corner-knight { display: none; } }
+.corner-sprite:hover img, .corner-sprite:focus-visible img { transform: translateY(-3px); }
+.corner-sprite:focus { outline: none; }
+.corner-sprite:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
+@media (max-width: 860px) { .corner-sprite { width: 64px; height: 56px; left: .6rem; bottom: .6rem; } }
+@media (max-width: 480px) { .corner-sprite { display: none; } }
+@media (prefers-reduced-motion: reduce) { .corner-sprite img { transition: none; } .corner-sprite:hover img, .corner-sprite:focus-visible img { transform: none; } }
+@media print { .corner-sprite { display: none; } }
 .footer-inner a { color: var(--steel-light); text-decoration: none; }
 .footer-inner a:hover { color: var(--white); }
 .footer-links { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
@@ -1206,12 +1195,12 @@ main {
 .hero h1::after {
   inset: -10% 0;
   background:
-    linear-gradient(90deg, transparent calc(100% - 6px), var(--blood) calc(100% - 6px), #e2333f calc(100% - 1px)),
-    linear-gradient(90deg, transparent calc(100% - 46px), rgba(193, 18, 31, .14) calc(100% - 6px), transparent calc(100% - 6px));
+    linear-gradient(90deg, transparent calc(100% - 6px), var(--blood) calc(100% - 6px), #ff7cc0 calc(100% - 1px)),
+    linear-gradient(90deg, transparent calc(100% - 46px), rgba(255, 79, 163, .14) calc(100% - 6px), transparent calc(100% - 6px));
 }
 .name-wipe::after {
   inset: 4% 0 8%;
-  background: linear-gradient(100deg, transparent 43%, rgba(216, 211, 200, .1) 48.5%, rgba(255, 255, 255, .2) 50%, rgba(216, 211, 200, .1) 51.5%, transparent 57%);
+  background: linear-gradient(100deg, transparent 43%, rgba(239, 231, 255, .1) 48.5%, rgba(255, 255, 255, .2) 50%, rgba(239, 231, 255, .1) 51.5%, transparent 57%);
   -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
   mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
 }
@@ -1281,7 +1270,7 @@ main {
   inset: -12% 0;
   pointer-events: none;
   opacity: 0;
-  background: radial-gradient(5px 20px at 100% 50%, #fff4e6 0, rgba(232, 116, 59, .85) 35%, rgba(193, 18, 31, 0) 72%) no-repeat;
+  background: radial-gradient(5px 20px at 100% 50%, #fff4fb 0, rgba(255, 154, 60, .85) 35%, rgba(255, 79, 163, 0) 72%) no-repeat;
 }
 .js .section-head.reveal h2,
 .js .contact-panel.reveal h2 { clip-path: polygon(-20% -12%, 0% -12%, -20% 112%, -20% 112%); }
@@ -1326,7 +1315,7 @@ main {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(105deg, transparent 36%, rgba(216, 211, 200, .07) 46%, rgba(255, 255, 255, .16) 50%, rgba(216, 211, 200, .07) 54%, transparent 64%);
+  background: linear-gradient(105deg, transparent 36%, rgba(239, 231, 255, .07) 46%, rgba(255, 255, 255, .16) 50%, rgba(239, 231, 255, .07) 54%, transparent 64%);
   transform: translateX(-120%);
 }
 .card:hover::before,
@@ -1417,7 +1406,7 @@ main {
   .nav {
     position: absolute;
     top: 64px; left: 0; right: 0;
-    background: rgba(16, 16, 20, .97);
+    background: rgba(20, 10, 38, .97);
     border-bottom: 1px solid var(--rule);
     display: none;
   }
@@ -1469,11 +1458,157 @@ main {
 }
 
 @media print {
-  .site-header, .hero-portrait, .more-toggle, .corner-knight { display: none; }
+  .site-header, .hero-portrait, .more-toggle, .corner-sprite { display: none; }
   body { background: #fff; color: #000; }
   h1, h2, h3, a { color: #000; }
 }
 
 /* clip-path would hide an outside outline on angular buttons, so draw focus inside */
 .btn:focus-visible { outline: 2px solid var(--ember); outline-offset: -5px; }
-.btn-primary:focus-visible { outline-color: var(--white); }
+.btn-primary:focus-visible { outline-color: var(--ink); }
+
+/* ==========================================================================
+   Synthwave '84 layer: deep purple night, sunset gradient, perspective grid.
+   Decorative layers are absolutely positioned (no layout shift) and every
+   animation here uses transform only and stops under prefers-reduced-motion.
+   ========================================================================== */
+
+html { background: var(--bg); }
+body {
+  font-size: 1.0625rem;
+  font-synthesis: none;
+  background-image:
+    radial-gradient(1100px 520px at 80% -8%, rgba(255, 79, 163, .14), transparent 62%),
+    radial-gradient(900px 520px at -10% 28%, rgba(79, 227, 240, .06), transparent 60%),
+    linear-gradient(180deg, #140a26 0%, #1a0d33 55%, #140a26 100%);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+h1, h2, h3 { letter-spacing: .01em; }
+strong, b { font-weight: 400; }
+.hero-lede strong, .about-copy strong, .mods-brief-copy strong { color: var(--cyan); }
+a { text-decoration-color: rgba(79, 227, 240, .55); }
+a:hover { text-decoration-color: var(--cyan); }
+.eyebrow::before { background: linear-gradient(90deg, var(--cyan), var(--blood)); }
+.section + .section { border-top-color: rgba(255, 79, 163, .22); }
+
+/* Header brand: the pixel synthalorian */
+.brand-sprite { width: 32px; height: 32px; image-rendering: pixelated; flex: none; }
+
+/* ---------- Hero: gunship cover, sunset, grid ---------- */
+.hero { isolation: isolate; }
+.hero-sky {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(180deg, #140a26 0%, #2a0f4a 52%, #5a1659 74%, #140a26 100%);
+}
+.hero-sky picture, .hero-sky img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 40%;
+}
+.hero-sky img { opacity: .5; }
+.hero-sky::before {
+  /* readability scrim: text always sits on near-solid deep purple */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(20, 10, 38, .96) 0%, rgba(20, 10, 38, .9) 42%, rgba(20, 10, 38, .55) 100%),
+    linear-gradient(180deg, rgba(20, 10, 38, .2) 0%, rgba(20, 10, 38, 0) 40%, rgba(20, 10, 38, .9) 100%);
+}
+.hero-grid-floor {
+  position: absolute;
+  left: -50%;
+  right: -50%;
+  bottom: 0;
+  height: 30%;
+  z-index: 2;
+  overflow: hidden;
+  opacity: .6;
+  transform: perspective(320px) rotateX(58deg);
+  transform-origin: 50% 100%;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 45%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 45%);
+}
+.hero-grid-floor::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  top: -48px;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(255, 79, 163, .55) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(79, 227, 240, .35) 2px, transparent 2px);
+  background-size: 48px 48px;
+  animation: grid-run 2.4s linear infinite;
+  will-change: transform;
+}
+@keyframes grid-run { to { transform: translate3d(0, 48px, 0); } }
+.hero-sky::after {
+  /* horizon line */
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 30%;
+  height: 1px;
+  opacity: .6;
+  z-index: 2;
+  background: linear-gradient(90deg, transparent, rgba(79, 227, 240, .7) 20%, rgba(255, 79, 163, .8) 50%, rgba(79, 227, 240, .7) 80%, transparent);
+}
+.hero .wrap { position: relative; z-index: 1; }
+.hero h1 { text-shadow: 0 0 22px rgba(255, 79, 163, .55), 0 2px 0 rgba(0, 0, 0, .6); }
+.hero h1 .dot { color: var(--cyan); }
+.hero-motto b { color: var(--cyan); }
+
+/* Sunset disc behind the avatar instead of smoke */
+.hero-portrait::before {
+  inset: -14% -18% auto auto;
+  width: 78%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffd23f 0%, var(--sunset) 38%, var(--blood) 72%, #8a2bb8 100%);
+  -webkit-mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 19px);
+  mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 19px);
+  opacity: .9;
+  animation: sun-breathe 9s ease-in-out infinite alternate;
+}
+@keyframes sun-breathe { to { transform: translate3d(0, 6px, 0) scale(1.02); } }
+.portrait-frame { background: linear-gradient(160deg, var(--blood), #3b2563 40%, var(--cyan)); box-shadow: 0 0 34px rgba(255, 79, 163, .25); }
+.portrait-frame img { filter: none; }
+.portrait-tag { color: var(--white); border-color: var(--cyan); }
+
+/* ---------- Pixel sprites ---------- */
+.pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
+.corner-sprite { width: 64px; height: 64px; }
+.corner-sprite img { image-rendering: pixelated; }
+@media (max-width: 860px) { .corner-sprite { width: 64px; height: 64px; } }
+
+/* Blackshield Company studio link keeps its knight */
+.contact-links .cl-knight { width: 24px; height: 21px; flex: none; image-rendering: pixelated; }
+
+/* Footer art credit */
+.art-credit { margin: .4rem 0 0; font-size: .8rem; color: var(--bone-dim); }
+.footer-sprite { width: 32px; height: 32px; vertical-align: middle; image-rendering: pixelated; margin-right: .35rem; }
+
+@media (max-width: 860px) {
+  .hero-sky::before {
+    background: linear-gradient(180deg, rgba(20, 10, 38, .78) 0%, rgba(20, 10, 38, .9) 45%, rgba(20, 10, 38, .94) 100%);
+  }
+  .hero-grid-floor { height: 18%; }
+  .hero-sky::after { bottom: 18%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-grid-floor::before, .hero-portrait::before { animation: none !important; }
+}
+@media print {
+  .hero-sky, .corner-sprite { display: none; }
+}

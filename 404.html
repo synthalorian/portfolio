@@ -3,23 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>This road leads nowhere — synth</title>
+  <title>Lost signal — synth</title>
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#101014">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/css/style.css?v=knight-interactive">
+  <meta name="theme-color" content="#140a26">
+  <link rel="icon" href="/favicon.svg?v=synthalorian" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/3270-nerd-font.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css?v=d0ccf88">
 </head>
 <body>
   <main id="main" class="section">
     <div class="wrap" style="min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1.25rem">
-      <img src="/assets/img/knight/knight-error.svg" width="192" height="168" alt="Knight A, the Blackshield Company mascot, staggering" style="image-rendering:pixelated;width:192px;height:168px">
+      <picture><source media="(prefers-reduced-motion: reduce)" srcset="/assets/img/sprite/synthalorian-64.png"><img src="/assets/img/sprite/synthalorian-idle-64.gif" width="192" height="192" alt="The pixel synthalorian, idling in place" class="pixel" style="width:192px;height:192px"></picture>
       <p class="eyebrow">Error 404</p>
-      <h1 style="font-size:clamp(2.2rem,6vw,4rem);margin:0">This road leads nowhere, traveler.</h1>
-      <p style="max-width:46ch;margin:0;opacity:.85">The page you sought was never built, or it has moved on. Turn back; the company still holds the keep.</p>
+      <h1 style="font-size:clamp(2.2rem,6vw,4rem);margin:0">Lost signal, pilot.</h1>
+      <p style="max-width:46ch;margin:0;color:var(--bone-dim)">This sector of the grid is empty. The page was never built, or it has moved on. Plot a course home.</p>
       <a class="btn btn-primary" href="/">Back to the portfolio</a>
     </div>
   </main>
-  <button type="button" class="corner-knight" data-knight-base="/assets/img/knight/" aria-label="Knight A, the Blackshield Company mascot. Press for a sword swing."><img src="/assets/img/knight/knight-idle.svg" width="80" height="70" alt="" decoding="async"></button>
-  <script src="/assets/js/knight.js?v=knight-interactive" defer></script>
+  <button type="button" class="corner-sprite" data-sprite-base="/assets/img/sprite/" aria-label="The pixel synthalorian. Press to make him walk."><picture><source media="(prefers-reduced-motion: reduce)" srcset="/assets/img/sprite/synthalorian-64.png"><img src="/assets/img/sprite/synthalorian-idle-64.gif" width="64" height="64" alt="" decoding="async"></picture></button>
+  <script src="/assets/js/sprite.js?v=d0ccf88" defer></script>
 </body>
 </html>
