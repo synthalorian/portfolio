@@ -1058,14 +1058,17 @@ h1, h2, h3 {
 }
 .footer-inner p { margin: 0; display: flex; align-items: center; gap: .6rem; }
 .footer-inner svg { width: 16px; height: 16px; }
+/* In flow at the end of the page by default (its own reserved row, aligned
+   with .wrap), so it never sits on top of content. Only when the left gutter
+   beside .wrap is wider than the sprite (>= 1360px) does it ride fixed in the
+   bottom-left corner. */
 .corner-sprite {
-  position: fixed;
-  left: 1rem;
-  bottom: 1rem;
+  position: static;
+  display: block;
   z-index: 40;
-  width: 80px;
-  height: 70px;
-  margin: 0;
+  width: 64px;
+  height: 64px;
+  margin: 0 0 1.25rem max(1.25rem, (100% - var(--wrap)) / 2);
   padding: 0;
   border: 0;
   background: none;
@@ -1073,7 +1076,11 @@ h1, h2, h3 {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
+@media (min-width: 1360px) {
+  .corner-sprite { position: fixed; left: 1rem; bottom: 1rem; margin: 0; }
+}
 .corner-sprite img {
+  display: block;
   width: 100%;
   height: 100%;
   image-rendering: pixelated;
@@ -1085,8 +1092,6 @@ h1, h2, h3 {
 .corner-sprite:hover img, .corner-sprite:focus-visible img { transform: translateY(-3px); }
 .corner-sprite:focus { outline: none; }
 .corner-sprite:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
-@media (max-width: 860px) { .corner-sprite { width: 64px; height: 56px; left: .6rem; bottom: .6rem; } }
-@media (max-width: 480px) { .corner-sprite { display: none; } }
 @media (prefers-reduced-motion: reduce) { .corner-sprite img { transition: none; } .corner-sprite:hover img, .corner-sprite:focus-visible img { transform: none; } }
 @media print { .corner-sprite { display: none; } }
 .footer-inner a { color: var(--steel-light); text-decoration: none; }
@@ -1576,9 +1581,7 @@ a:hover { text-decoration-color: var(--cyan); }
 
 /* ---------- Pixel sprites ---------- */
 .pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
-.corner-sprite { width: 64px; height: 64px; }
 .corner-sprite img { image-rendering: pixelated; }
-@media (max-width: 860px) { .corner-sprite { width: 64px; height: 64px; } }
 
 /* Blackshield Company studio link keeps its knight */
 .contact-links .cl-knight { width: 24px; height: 21px; flex: none; image-rendering: pixelated; }
