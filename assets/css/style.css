@@ -1058,8 +1058,6 @@ h1, h2, h3 {
 }
 .footer-inner p { margin: 0; display: flex; align-items: center; gap: .6rem; }
 .footer-inner svg { width: 16px; height: 16px; }
-/* Knight A, the Blackshield Company mascot (animated SVG; holds still under reduced motion). */
-/* Knight A in the bottom-left corner of every page. A button: hover, focus, click. */
 .corner-sprite {
   position: fixed;
   left: 1rem;
