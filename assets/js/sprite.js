@@ -1,4 +1,4 @@
-/* The pixel synthalorian in the bottom-left corner. Idles by default and
+/* The pixel synthalorian at the foot of the page (bottom-left corner on wide screens). Idles by default and
    walks while hovered, focused, or for a moment after a click (it is a
    button, so Enter/Space work too). Under prefers-reduced-motion the
    <picture> serves the static PNG and this script never swaps frames. */

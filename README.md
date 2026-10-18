@@ -60,7 +60,7 @@ All motion is CSS (transform, opacity, clip-path only) with small helpers in `as
 
 - **Hero intro** (~1.1s, once per load): a neon slash cuts the name in, a glint passes over it, and the rest of the hero follows.
 - **Hero sky**: a deep-purple gradient and scrim, a striped sunset behind the avatar, and a perspective grid rolling toward you (transform only).
-- **Corner sprite**: the pixel synthalorian idles in the bottom-left corner and walks on hover, focus, or click. Under reduced motion the `<picture>` serves the static PNG.
+- **Corner sprite**: the pixel synthalorian idles at the foot of the page (fixed in the bottom-left gutter at 1360px and wider, so it never covers content) and walks on hover, focus, or click. Under reduced motion the `<picture>` serves the static PNG.
 - **Section headings**: a diagonal cut with a spark at the edge, then the red rule draws in.
 - **Project cards**: lock in with a slight rotation and settle. On hover or keyboard focus they lift, glow, and get one steel shine pass.
 - **"More work"**: groups reveal on scroll and their labels type on.
