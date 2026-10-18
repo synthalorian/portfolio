@@ -1058,17 +1058,22 @@ h1, h2, h3 {
 }
 .footer-inner p { margin: 0; display: flex; align-items: center; gap: .6rem; }
 .footer-inner svg { width: 16px; height: 16px; }
-/* In flow at the end of the page by default (its own reserved row, aligned
-   with .wrap), so it never sits on top of content. Only when the left gutter
-   beside .wrap is wider than the sprite (>= 1360px) does it ride fixed in the
-   bottom-left corner. */
+/* Fixed in the bottom-left corner at every width. Below 1360px it is a
+   native 32px sprite tucked into the 8px corner (it only grazes the 20px
+   page gutter while scrolling, and the footer reserves room so the end of
+   the page clears it); at 1360px and up the gutter beside .wrap is wider
+   than the 64px sprite, so it rides there at full size. Fixed + explicit
+   size: never takes part in layout, CLS 0. */
 .corner-sprite {
-  position: static;
-  display: block;
+  --cs: 32px;
+  position: fixed;
+  left: .5rem;
+  bottom: .5rem;
   z-index: 40;
-  width: 64px;
-  height: 64px;
-  margin: 0 0 1.25rem max(1.25rem, (100% - var(--wrap)) / 2);
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0;
   padding: 0;
   border: 0;
   background: none;
@@ -1077,7 +1082,10 @@ h1, h2, h3 {
   -webkit-tap-highlight-color: transparent;
 }
 @media (min-width: 1360px) {
-  .corner-sprite { position: fixed; left: 1rem; bottom: 1rem; margin: 0; }
+  .corner-sprite { --cs: 64px; left: 1rem; bottom: 1rem; width: 64px; height: 64px; }
+}
+@media (max-width: 1359px) {
+  .site-footer { padding-bottom: calc(2.5rem + 24px); }
 }
 .corner-sprite img {
   display: block;
@@ -1495,8 +1503,8 @@ a:hover { text-decoration-color: var(--cyan); }
 .eyebrow::before { background: linear-gradient(90deg, var(--cyan), var(--blood)); }
 .section + .section { border-top-color: rgba(255, 79, 163, .22); }
 
-/* Header brand: the pixel synthalorian */
-.brand-sprite { width: 32px; height: 32px; image-rendering: pixelated; flex: none; }
+/* Header brand: code-drawn pixel sunset (the synthalorian lives in the bottom-left corner) */
+.brand .brand-sun { display: block; width: 32px; height: 32px; flex: none; shape-rendering: crispEdges; }
 
 /* ---------- Hero: purple sky, sunset, grid ---------- */
 .hero { isolation: isolate; }
@@ -1601,4 +1609,44 @@ a:hover { text-decoration-color: var(--cyan); }
 }
 @media print {
   .hero-sky, .corner-sprite { display: none; }
+}
+
+/* ---------- Corner sprite: one-shot moves ----------
+   Click cycles thinking, working, success, error, blaster, jetpack. Each is a
+   6-frame sheet (native 32px below 1360px, 64px at and above), stepped once
+   with steps(6) at the move's own frame time, then sprite.js returns to idle. */
+.corner-sprite .cs-fx {
+  position: absolute;
+  inset: 0;
+  display: none;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: calc(var(--cs) * 6) var(--cs);
+  image-rendering: pixelated;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .55));
+}
+.corner-sprite[data-move] img { visibility: hidden; }
+.corner-sprite[data-move] .cs-fx { display: block; animation: cs-play var(--cs-dur, 720ms) steps(6) 1 backwards; }
+.corner-sprite[data-move="thinking"] { --cs-dur: 1440ms; }
+.corner-sprite[data-move="working"]  { --cs-dur: 660ms; }
+.corner-sprite[data-move="success"]  { --cs-dur: 780ms; }
+.corner-sprite[data-move="error"]    { --cs-dur: 840ms; }
+.corner-sprite[data-move="blaster"]  { --cs-dur: 660ms; }
+.corner-sprite[data-move="jetpack"]  { --cs-dur: 600ms; }
+@keyframes cs-play { from { background-position: 0 0; } to { background-position: calc(var(--cs) * -6) 0; } }
+.corner-sprite:hover .cs-fx, .corner-sprite:focus-visible .cs-fx { transform: translateY(-3px); }
+.corner-sprite[data-move="thinking"] .cs-fx { background-image: url(/assets/img/sprite/synthalorian-thinking-sheet-32.png); }
+.corner-sprite[data-move="working"] .cs-fx { background-image: url(/assets/img/sprite/synthalorian-working-sheet-32.png); }
+.corner-sprite[data-move="success"] .cs-fx { background-image: url(/assets/img/sprite/synthalorian-success-sheet-32.png); }
+.corner-sprite[data-move="error"] .cs-fx { background-image: url(/assets/img/sprite/synthalorian-error-sheet-32.png); }
+.corner-sprite[data-move="blaster"] .cs-fx { background-image: url(/assets/img/sprite/synthalorian-blaster-sheet-32.png); }
+.corner-sprite[data-move="jetpack"] .cs-fx { background-image: url(/assets/img/sprite/synthalorian-jetpack-sheet-32.png); }
+@media (min-width: 1360px) {
+  .corner-sprite[data-move="thinking"] .cs-fx { background-image: url(/assets/img/sprite/synthalorian-thinking-sheet-64.png); }
+  .corner-sprite[data-move="working"] .cs-fx { background-image: url(/assets/img/sprite/synthalorian-working-sheet-64.png); }
+  .corner-sprite[data-move="success"] .cs-fx { background-image: url(/assets/img/sprite/synthalorian-success-sheet-64.png); }
+  .corner-sprite[data-move="error"] .cs-fx { background-image: url(/assets/img/sprite/synthalorian-error-sheet-64.png); }
+  .corner-sprite[data-move="blaster"] .cs-fx { background-image: url(/assets/img/sprite/synthalorian-blaster-sheet-64.png); }
+  .corner-sprite[data-move="jetpack"] .cs-fx { background-image: url(/assets/img/sprite/synthalorian-jetpack-sheet-64.png); }
 }
