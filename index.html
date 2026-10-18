@@ -3,35 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>synth — game engines, audio tools &amp; AI agent tooling</title>
-  <meta name="description" content="Portfolio of synth (synthalorian): open-source game engines, synthesizers and audio tools, AI agent tooling, security utilities, offline-first apps, and a fifteen-mod Skyrim series. Founder of Blackshield Company.">
+  <title>synth — the synthalorian · game engines, audio tools &amp; AI agent tooling</title>
+  <meta name="description" content="Portfolio of synth, the synthalorian: open-source game engines, synthesizers and audio tools, AI agent tooling, security utilities, offline-first apps, and a fifteen-mod Skyrim series. Founder of Blackshield Company.">
   <meta name="author" content="synth">
-  <meta name="theme-color" content="#101014">
+  <meta name="theme-color" content="#140a26">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="https://synthalorian.pages.dev/">
 
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.svg?v=synthalorian" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=synthalorian">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="synth">
-  <meta property="og:title" content="synth — game engines, audio tools &amp; AI agent tooling">
-  <meta property="og:description" content="Open-source game engines, synthesizers and audio tools, AI agent tooling, and offline-first apps. Founder of Blackshield Company.">
+  <meta property="og:title" content="synth — the synthalorian">
+  <meta property="og:description" content="Neon-lit night runs through open-source game engines, synthesizers and audio tools, AI agent tooling, and offline-first apps. Founder of Blackshield Company.">
   <meta property="og:url" content="https://synthalorian.pages.dev/">
-  <meta property="og:image" content="https://synthalorian.pages.dev/assets/img/og-image.jpg">
+  <meta property="og:image" content="https://synthalorian.pages.dev/assets/img/og-synthalorian.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="synth — Guts. Steel. Code. Portfolio card with a black knight bearing a red-cross shield.">
+  <meta property="og:image:alt" content="synth, the synthalorian: portfolio card with a helmeted pilot in a neon-lit cockpit, a striped sunset and a magenta perspective grid.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="synth — game engines, audio tools &amp; AI agent tooling">
+  <meta name="twitter:title" content="synth — the synthalorian">
   <meta name="twitter:description" content="Open-source game engines, synthesizers and audio tools, AI agent tooling, and offline-first apps.">
-  <meta name="twitter:image" content="https://synthalorian.pages.dev/assets/img/og-image.jpg">
+  <meta name="twitter:image" content="https://synthalorian.pages.dev/assets/img/og-synthalorian.jpg">
 
   <!-- Sets the "js" class before first paint so reveal animations never flash. CSP hash in _headers must match this exact script. -->
   <script>(function(d){var r=d.documentElement;r.classList.remove("no-js");if("IntersectionObserver"in window&&window.matchMedia&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){r.classList.add("js");setTimeout(function(){if(!window.__synthReveal)r.classList.remove("js")},3000)}})(document);</script>
-  <link rel="preload" href="/assets/fonts/cinzel-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=knight-interactive">
+  <link rel="preload" href="/assets/fonts/3270-nerd-font.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css?v=d0ccf88">
 
   <script type="application/ld+json">
   {
@@ -40,7 +39,7 @@
     "name": "synth",
     "alternateName": "synthalorian",
     "url": "https://synthalorian.pages.dev/",
-    "image": "https://synthalorian.pages.dev/assets/img/synth-knight.jpg",
+    "image": "https://synthalorian.pages.dev/assets/img/synthalorian-avatar-920.jpg",
     "email": "mailto:blackshield@mail.grokbot.com",
     "homeLocation": { "@type": "Place", "name": "Florida" },
     "jobTitle": "Software developer",
@@ -80,12 +79,7 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="#top" aria-label="synth — back to top">
-        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
-          <path class="bm-fill" d="M32 3 57 9.2V30c0 15.4-10 25.7-25 31.2C17 55.7 7 45.4 7 30V9.2Z" fill="#101014"/>
-          <g class="bm-cross" clip-path="url(#shield-inner)" fill="#C1121F"><rect x="28" y="6" width="8" height="54"/><rect x="10" y="22" width="44" height="8"/></g>
-          <g class="bm-claws" fill="#8F959C"><path d="M48.7 30.7 43.6 39.2 36.2 45.7 41.3 37.2Z"/><path d="M51.5 33.0 46.4 41.5 39.0 48.0 44.1 39.5Z"/><path d="M54.3 35.3 49.2 43.8 41.8 50.3 46.9 41.8Z"/></g>
-          <path class="bm-ring" d="M32 3 57 9.2V30c0 15.4-10 25.7-25 31.2C17 55.7 7 45.4 7 30V9.2Z" fill="none" stroke="#8F959C" stroke-width="3"/>
-        </svg>
+        <img class="brand-sprite" src="/assets/img/sprite/synthalorian-32.png" width="32" height="32" alt="" decoding="async">
         <span>synth</span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
@@ -104,16 +98,24 @@
   <main id="main">
     <!-- ============================== HERO ============================== -->
     <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-sky" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 860px)" srcset="/assets/img/cover-gunship-768.webp" type="image/webp">
+          <source srcset="/assets/img/cover-gunship-1280.webp" type="image/webp">
+          <img src="/assets/img/cover-gunship-1280.jpg" width="1280" height="720" alt="" decoding="async">
+        </picture>
+        <span class="hero-grid-floor"></span>
+      </div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="hero-motto">Guts <b>/</b> Steel <b>/</b> Code</p>
+          <p class="hero-motto">Pilot <b>/</b> Neon <b>/</b> Code</p>
           <h1 id="hero-title"><span class="name-wipe">synth<span class="dot" aria-hidden="true">.</span></span></h1>
           <ul class="hero-handle">
             <li>@synthalorian</li>
             <li>Florida</li>
             <li>Founder, Blackshield Company</li>
           </ul>
-          <p class="hero-lede">I build <strong>game engines</strong>, <strong>synthesizers and audio tools</strong>, and <strong>AI agent tooling</strong> — in the open, with Rust, C++, Odin, and Flutter.</p>
+          <p class="hero-lede">The synthalorian. A mercenary coder flying night runs through <strong>game engines</strong>, <strong>synthesizers and audio tools</strong>, and <strong>AI agent tooling</strong> — all in the open, in Rust, C++, Odin, and Flutter.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#work">View the work <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <a class="btn btn-ghost" href="https://github.com/synthalorian"><svg aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
@@ -131,11 +133,11 @@
           <span class="portrait-corner bl" aria-hidden="true"></span>
           <div class="portrait-frame">
             <picture>
-              <source srcset="/assets/img/synth-knight.webp" type="image/webp">
-              <img src="/assets/img/synth-knight.jpg" width="460" height="460" alt="synth's avatar: a painted black-armored knight carrying a sword and a dark shield with a red cross, a burning city behind him." fetchpriority="high">
+              <source srcset="/assets/img/synthalorian-avatar-460.webp 1x, /assets/img/synthalorian-avatar-920.webp 2x" type="image/webp">
+              <img src="/assets/img/synthalorian-avatar-460.jpg" srcset="/assets/img/synthalorian-avatar-460.jpg 1x, /assets/img/synthalorian-avatar-920.jpg 2x" width="460" height="460" alt="synth's avatar, the synthalorian: a pilot in a dark, Mandalorian-style helmet with a glowing pink visor and purple armor with a palm-tree emblem, seated in a cockpit facing a striped synthwave sunset over a neon city and grid." fetchpriority="high">
             </picture>
           </div>
-          <span class="portrait-tag">The shield holds</span>
+          <span class="portrait-tag">Cleared for launch</span>
         </div>
       </div>
     </section>
@@ -146,15 +148,15 @@
         <div class="section-head reveal">
           <div>
             <p class="eyebrow"><span class="num">01</span> About</p>
-            <h2 id="about-title">Steel over spectacle</h2>
+            <h2 id="about-title">Neon over noise</h2>
           </div>
         </div>
         <div class="about-grid">
           <div class="about-copy reveal">
-            <p>I'm <strong>synth</strong> (<a href="https://github.com/synthalorian">synthalorian</a> on GitHub), a developer based in Florida and the founder of <a href="https://github.com/Blackshield-Company">Blackshield Company</a> — an organization for digital forensics, security tooling, an AI platform, and the Blackshield theme family.</p>
-            <p>My work runs from low-level engines to finished apps: a hot-reloading game engine in Odin, a JUCE synthesizer with VST3 and CLAP builds, a Rust AI coding harness with persistent memory, mesh-networking tools for Reticulum, and offline-first Flutter apps for Android and iOS. Much of it is local-first by design — your data stays on your machine.</p>
-            <p>Off the keyboard, I play guitar on a praise team — which is where projects like <a href="https://github.com/synthalorian/setlist">Setlist</a> and <a href="https://github.com/synthalorian/Open-Praise">Open Praise</a> come from.</p>
-            <p><strong>Open to collaborators and new roles</strong> in game tech, audio software, AI developer tooling, and security. If something here overlaps with what you're building, <a href="#contact">get in touch</a>.</p>
+            <p>I'm <strong>synth</strong> — the synthalorian, <a href="https://github.com/synthalorian">synthalorian</a> on GitHub — a developer flying out of Florida and the founder of <a href="https://github.com/Blackshield-Company">Blackshield Company</a> — my studio for digital forensics, security tooling, an AI platform, and the Blackshield theme family.</p>
+            <p>The contracts run from the engine room to the cockpit: a hot-reloading game engine in Odin, a JUCE synthesizer with VST3 and CLAP builds, a Rust AI coding harness with persistent memory, mesh-networking tools for Reticulum, and offline-first Flutter apps for Android and iOS. Much of it is local-first by design — your data stays on your machine, off the grid.</p>
+            <p>Off the keyboard, I play guitar on a praise team — that's where projects like <a href="https://github.com/synthalorian/setlist">Setlist</a> and <a href="https://github.com/synthalorian/Open-Praise">Open Praise</a> come from.</p>
+            <p><strong>Open to collaborators and new roles</strong> in game tech, audio software, AI developer tooling, and security. If our flight paths cross, <a href="#contact">open a channel</a>.</p>
           </div>
           <ul class="focus-list reveal">
             <li><span class="fi">/01</span><h3>Game engines &amp; games</h3><p>VoidEngine (Odin + SDL2), Chronos Engine (Rust ECS), emulators, renderers, and a fifteen-mod <a href="#mods">Skyrim series</a>.</p></li>
@@ -176,7 +178,7 @@
             <p class="eyebrow"><span class="num">02</span> Selected work</p>
             <h2 id="work-title">Featured projects</h2>
           </div>
-          <p>Seven projects I'd point a collaborator to first. Every card links straight to the source.</p>
+          <p>Seven runs I'd show a co-pilot first. Every card links straight to the source.</p>
         </div>
 
         <div class="cards">
@@ -912,13 +914,13 @@
         <div class="contact-panel panel reveal">
           <div class="contact-copy">
             <p class="eyebrow"><span class="num">05</span> Contact</p>
-            <h2 id="contact-title">Let's build something that holds.</h2>
-            <p>Collaborations, contributions, contract work, or a full-time role — email is the fastest way to reach me. Issues and pull requests on any repo are welcome too.</p>
+            <h2 id="contact-title">Open a channel.</h2>
+            <p>Collaborations, contributions, contract work, or a full-time role — email is the fastest frequency. Issues and pull requests on any repo are welcome too.</p>
           </div>
           <ul class="contact-links">
             <li><a href="mailto:blackshield@mail.grokbot.com"><svg aria-hidden="true"><use href="#i-mail"/></svg><span><span class="cl-label">Email</span><span class="cl-value">blackshield@mail.grokbot.com</span></span><span class="cl-arrow" aria-hidden="true">→</span></a></li>
             <li><a href="https://github.com/synthalorian"><svg aria-hidden="true"><use href="#i-github"/></svg><span><span class="cl-label">GitHub</span><span class="cl-value">github.com/synthalorian</span></span><span class="cl-arrow" aria-hidden="true">→</span></a></li>
-            <li><a href="https://github.com/Blackshield-Company"><svg aria-hidden="true"><use href="#i-shield"/></svg><span><span class="cl-label">Organization</span><span class="cl-value">Blackshield Company</span></span><span class="cl-arrow" aria-hidden="true">→</span></a></li>
+            <li><a href="https://github.com/Blackshield-Company"><img class="cl-knight" src="/assets/img/knight/knight-idle.svg" width="24" height="21" alt="" loading="lazy" decoding="async"><span><span class="cl-label">Organization</span><span class="cl-value">Blackshield Company</span></span><span class="cl-arrow" aria-hidden="true">→</span></a></li>
             <li><a href="https://www.nexusmods.com/profile/synthalorian"><svg aria-hidden="true"><use href="#i-sword"/></svg><span><span class="cl-label">Skyrim mods</span><span class="cl-value">Nexus Mods profile</span></span><span class="cl-arrow" aria-hidden="true">→</span></a></li>
           </ul>
         </div>
@@ -928,7 +930,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p><img class="footer-knight" src="/assets/img/knight/knight-idle.svg" width="48" height="42" alt="Knight A, the Blackshield Company mascot" loading="lazy" decoding="async"> © <span id="year">2026</span> synth. The shield holds.</p>
+      <div><p><img class="footer-sprite" src="/assets/img/sprite/synthalorian-32.png" width="32" height="32" alt="" loading="lazy" decoding="async"> © <span id="year">2026</span> synth, the synthalorian. Ride the neon.</p><p class="art-credit">AI-assisted art: avatar, gunship cover and pixel sprite.</p></div>
       <ul class="footer-links">
         <li><a href="https://github.com/synthalorian">GitHub</a></li>
         <li><a href="https://github.com/Blackshield-Company">Blackshield Company</a></li>
@@ -938,8 +940,8 @@
     </div>
   </footer>
 
-  <button type="button" class="corner-knight" data-knight-base="/assets/img/knight/" aria-label="Knight A, the Blackshield Company mascot. Press for a sword swing."><img src="/assets/img/knight/knight-idle.svg" width="80" height="70" alt="" decoding="async"></button>
-  <script src="/assets/js/knight.js?v=knight-interactive" defer></script>
+  <button type="button" class="corner-sprite" data-sprite-base="/assets/img/sprite/" aria-label="The pixel synthalorian. Press to make him walk."><picture><source media="(prefers-reduced-motion: reduce)" srcset="/assets/img/sprite/synthalorian-64.png"><img src="/assets/img/sprite/synthalorian-idle-64.gif" width="64" height="64" alt="" decoding="async"></picture></button>
+  <script src="/assets/js/sprite.js?v=d0ccf88" defer></script>
   <script src="/assets/js/main.js?v=b76700d" defer></script>
 </body>
 </html>
