@@ -16,7 +16,7 @@ assets/css/style.css    all styles (palette variables at the top)
 assets/js/main.js       mobile nav, section highlight, scroll reveal, "More work" expand/collapse
 assets/js/sprite.js     the corner synthalorian (idle, walks on hover/focus/click)
 assets/fonts/           self-hosted 3270 Nerd Font (Latin subset, see 3270-NERD-FONT-LICENSE.txt)
-assets/img/             cockpit avatar (460/920, WebP + JPEG), gunship cover (768/1280), Open Graph card
+assets/img/             cockpit avatar (460/920, WebP + JPEG), Open Graph card
 assets/img/sprite/      pixel synthalorian: idle/walk GIFs + static PNGs (reduced-motion fallback)
 assets/img/knight/      Knight A, the Blackshield Company mascot (shown only on the studio link)
 assets/img/mods/        Skyrim mod cover thumbnails (640×360, WebP + JPEG fallback)
@@ -59,7 +59,7 @@ Data came from public GitHub metadata and READMEs as of October 2026. Star count
 All motion is CSS (transform, opacity, clip-path only) with small helpers in `assets/js/main.js`:
 
 - **Hero intro** (~1.1s, once per load): a neon slash cuts the name in, a glint passes over it, and the rest of the hero follows.
-- **Hero sky**: the gunship cover under a deep-purple scrim, a striped sunset behind the avatar, and a perspective grid rolling toward you (transform only).
+- **Hero sky**: a deep-purple gradient and scrim, a striped sunset behind the avatar, and a perspective grid rolling toward you (transform only).
 - **Corner sprite**: the pixel synthalorian idles in the bottom-left corner and walks on hover, focus, or click. Under reduced motion the `<picture>` serves the static PNG.
 - **Section headings**: a diagonal cut with a spark at the edge, then the red rule draws in.
 - **Project cards**: lock in with a slight rotation and settle. On hover or keyboard focus they lift, glow, and get one steel shine pass.
@@ -90,4 +90,3 @@ in `index.html` (canonical, Open Graph, JSON-LD), `robots.txt`, and `sitemap.xml
 - **3270 Nerd Font** from the [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) v3.5.1 release, subset to Latin and punctuation and
   converted to WOFF2 (`3270-nerd-font.woff2`, ~12 KB). It loads with `font-display: optional` plus a preload, so text never reflows when
   it arrives. Its license ships next to it in `assets/fonts/3270-NERD-FONT-LICENSE.txt`.
-- The avatar, gunship cover and pixel sprite are AI-assisted art, credited in the footer.
