@@ -1516,6 +1516,15 @@ a:hover { text-decoration-color: var(--cyan); }
   pointer-events: none;
   background: linear-gradient(180deg, #140a26 0%, #2a0f4a 52%, #5a1659 74%, #140a26 100%);
 }
+.hero-sky picture, .hero-sky img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 40%;
+}
+.hero-sky img { opacity: .5; }
 .hero-sky::before {
   /* readability scrim: text always sits on near-solid deep purple */
   content: "";
