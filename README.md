@@ -11,12 +11,12 @@ Plain static files — HTML, CSS, a little vanilla JS. No build step, no framewo
 index.html              the whole site (all project data is hardcoded here)
 404.html                not-found page
 favicon.svg             pixel synthwave sunset (crisp SVG pixels; same art as the header icon)
-apple-touch-icon.png    180×180 cockpit avatar
+apple-touch-icon.png    180×180 gunship cockpit avatar
 assets/css/style.css    all styles (palette variables at the top)
 assets/js/main.js       mobile nav, section highlight, scroll reveal, "More work" expand/collapse
 assets/js/sprite.js     the corner synthalorian (idle, walk on hover/focus, click plays the next move)
 assets/fonts/           self-hosted 3270 Nerd Font (Latin subset, see 3270-NERD-FONT-LICENSE.txt)
-assets/img/             cockpit avatar (460/920, WebP + JPEG), Open Graph card
+assets/img/             gunship cockpit avatar (512/1024, WebP + JPEG), HD gunship hero cover (1920/768, WebP + JPEG), Open Graph card
 assets/img/sprite/      pixel synthalorian: idle/walk GIFs, 6-frame move sheets (32/64px), static PNGs (reduced-motion fallback)
 assets/img/knight/      Knight A, the Blackshield Company mascot (shown only on the studio link)
 assets/img/mods/        Skyrim mod cover thumbnails (640×360, WebP + JPEG fallback)
