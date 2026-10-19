@@ -11,12 +11,12 @@ Plain static files — HTML, CSS, a little vanilla JS. No build step, no framewo
 index.html              the whole site (all project data is hardcoded here)
 404.html                not-found page
 favicon.svg             pixel synthwave sunset (crisp SVG pixels; same art as the header icon)
-apple-touch-icon.png    180×180 cockpit avatar
+apple-touch-icon.png    180×180 gunship cockpit avatar
 assets/css/style.css    all styles (palette variables at the top)
 assets/js/main.js       mobile nav, section highlight, scroll reveal, "More work" expand/collapse
 assets/js/sprite.js     the corner synthalorian (idle, walk on hover/focus, click plays the next move)
 assets/fonts/           self-hosted 3270 Nerd Font (Latin subset, see 3270-NERD-FONT-LICENSE.txt)
-assets/img/             cockpit avatar (460/920, WebP + JPEG), Open Graph card
+assets/img/             gunship cockpit avatar (512/1024, WebP + JPEG), HD gunship hero cover (1920/768, WebP + JPEG), Open Graph card
 assets/img/sprite/      pixel synthalorian: idle/walk GIFs, 6-frame move sheets (32/64px), static PNGs (reduced-motion fallback)
 assets/img/knight/      Knight A, the Blackshield Company mascot (shown only on the studio link)
 assets/img/mods/        Skyrim mod cover thumbnails (640×360, WebP + JPEG fallback)
@@ -59,7 +59,7 @@ Data came from public GitHub metadata and READMEs as of October 2026. Star count
 All motion is CSS (transform, opacity, clip-path only) with small helpers in `assets/js/main.js`:
 
 - **Hero intro** (~1.1s, once per load): a neon slash cuts the name in, a glint passes over it, and the rest of the hero follows.
-- **Hero sky**: a deep-purple gradient and scrim, a striped sunset behind the avatar, and a perspective grid rolling toward you (transform only).
+- **Hero sky**: the HD gunship cover, faint behind a deep-purple gradient and scrim, a striped sunset behind the avatar, and a perspective grid rolling toward you (transform only).
 - **Corner sprite**: the pixel synthalorian rides fixed in the bottom-left corner at every width (native 32px below 1360px with room reserved under the footer, 64px in the wide left gutter at 1360px and up). He idles, walks on hover or focus, and each click (or Enter/Space) plays his next move once: thinking, working, success, error, blaster, jetpack. Moves are sprite sheets stepped by CSS `steps(6)`, so each play starts on frame 0. Under reduced motion the `<picture>` serves the static PNG and nothing swaps.
 - **Section headings**: a diagonal cut with a spark at the edge, then the red rule draws in.
 - **Project cards**: lock in with a slight rotation and settle. On hover or keyboard focus they lift, glow, and get one steel shine pass.
