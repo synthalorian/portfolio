@@ -59,7 +59,7 @@ Data came from public GitHub metadata and READMEs as of October 2026. Star count
 All motion is CSS (transform, opacity, clip-path only) with small helpers in `assets/js/main.js`:
 
 - **Hero intro** (~1.1s, once per load): a neon slash cuts the name in, a glint passes over it, and the rest of the hero follows.
-- **Hero sky**: a deep-purple gradient and scrim, a striped sunset behind the avatar, and a perspective grid rolling toward you (transform only).
+- **Hero sky**: the HD gunship cover, faint behind a deep-purple gradient and scrim, a striped sunset behind the avatar, and a perspective grid rolling toward you (transform only).
 - **Corner sprite**: the pixel synthalorian rides fixed in the bottom-left corner at every width (native 32px below 1360px with room reserved under the footer, 64px in the wide left gutter at 1360px and up). He idles, walks on hover or focus, and each click (or Enter/Space) plays his next move once: thinking, working, success, error, blaster, jetpack. Moves are sprite sheets stepped by CSS `steps(6)`, so each play starts on frame 0. Under reduced motion the `<picture>` serves the static PNG and nothing swaps.
 - **Section headings**: a diagonal cut with a spark at the edge, then the red rule draws in.
 - **Project cards**: lock in with a slight rotation and settle. On hover or keyboard focus they lift, glow, and get one steel shine pass.
