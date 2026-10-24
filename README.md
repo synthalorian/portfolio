@@ -1,25 +1,25 @@
 ![portfolio](.github/preview.png)
 
-# synth — portfolio
+# synth: portfolio
 
-Personal portfolio for **synth**, the synthalorian ([@synthalorian](https://github.com/synthalorian)). Synthwave '84 livery: deep purple night, magenta and cyan neon, a striped sunset and a perspective grid.
-Plain static files — HTML, CSS, a little vanilla JS. No build step, no frameworks, no trackers, no runtime API calls.
+Personal portfolio for **synth** ([@synthalorian](https://github.com/synthalorian)). Blackshield livery: matte black, blood red, steel and bone, with the Blackshield knight as the mascot.
+Plain static files: HTML, CSS, a little vanilla JS. No build step, no frameworks, no trackers, no runtime API calls.
 
 ## Structure
 
 ```
 index.html              the whole site (all project data is hardcoded here)
 404.html                not-found page
-favicon.svg             pixel synthwave sunset (crisp SVG pixels; same art as the header icon)
-apple-touch-icon.png    180×180 gunship cockpit avatar
-assets/css/style.css    all styles (palette variables at the top)
+favicon.svg, favicon-32.png, favicon.ico, apple-touch-icon.png, icon-512.png   knight icons
+assets/css/blackshield.css   palette variables (black #101014, blood #C1121F, steel #8F959C, bone #D8D3C8)
+assets/css/knight.css        the knight sprite player (32x28 frames, stepped by CSS)
+assets/css/style.css         all site styles
 assets/js/main.js       mobile nav, section highlight, scroll reveal, "More work" expand/collapse
-assets/js/sprite.js     the corner synthalorian (idle, walk on hover/focus, click plays the next move)
-assets/fonts/           self-hosted 3270 Nerd Font (Latin subset, see 3270-NERD-FONT-LICENSE.txt)
-assets/img/             gunship cockpit avatar (512/1024, WebP + JPEG), HD gunship hero cover (1920/768, WebP + JPEG), Open Graph card
-assets/img/sprite/      pixel synthalorian: idle/walk GIFs, 6-frame move sheets (32/64px), static PNGs (reduced-motion fallback)
-assets/img/knight/      Knight A, the Blackshield Company mascot (shown only on the studio link)
-assets/img/mods/        Skyrim mod cover thumbnails (640×360, WebP + JPEG fallback)
+assets/js/sprite.js     the corner knight (idle; a press plays the next move)
+assets/fonts/           self-hosted Cinzel, Inter and JetBrains Mono (SIL OFL, licences included)
+assets/img/knight/      canonical knight sprite strips and stills
+assets/img/og-synthalorian.png   Open Graph card (1200x630)
+assets/img/mods/        Skyrim mod cover thumbnails (640x360, WebP + JPEG fallback)
 _headers                Cloudflare Pages security and cache headers
 robots.txt, sitemap.xml
 ```
@@ -54,39 +54,6 @@ Everything lives in `index.html`:
 
 Data came from public GitHub metadata and READMEs as of October 2026. Star counts and versions are static. Update them by hand when you want to.
 
-## Animations
+## Motion
 
-All motion is CSS (transform, opacity, clip-path only) with small helpers in `assets/js/main.js`:
-
-- **Hero intro** (~1.1s, once per load): a neon slash cuts the name in, a glint passes over it, and the rest of the hero follows.
-- **Hero sky**: the HD gunship cover, faint behind a deep-purple gradient and scrim, a striped sunset behind the avatar, and a perspective grid rolling toward you (transform only).
-- **Corner sprite**: the pixel synthalorian rides fixed in the bottom-left corner at every width (native 32px below 1360px with room reserved under the footer, 64px in the wide left gutter at 1360px and up). He idles, walks on hover or focus, and each click (or Enter/Space) plays his next move once: thinking, working, success, error, blaster, jetpack. Moves are sprite sheets stepped by CSS `steps(6)`, so each play starts on frame 0. Under reduced motion the `<picture>` serves the static PNG and nothing swaps.
-- **Section headings**: a diagonal cut with a spark at the edge, then the red rule draws in.
-- **Project cards**: lock in with a slight rotation and settle. On hover or keyboard focus they lift, glow, and get one steel shine pass.
-- **"More work"**: groups reveal on scroll and their labels type on.
-- **Scroll progress**: a rail on the left edge (a top bar on small screens).
-- **Hero sparks**: drift a few pixels with the mouse (fine pointers only) and pause when off screen.
-
-Everything is disabled under `prefers-reduced-motion`, and nothing is hidden without JavaScript.
-
-A one-line inline script in `<head>` adds the `js` class before first paint. `_headers` allows it by its SHA-256 hash, so if you
-change that script, update the `'sha256-…'` value in the Content-Security-Policy. If the hash doesn't match, the browser blocks the
-script, and the site still works but reveals start slightly later.
-
-## Cache busting
-
-`_headers` caches `/assets/*` for a day, so the CSS and JS URLs in `index.html` and `404.html` carry a `?v=` token. Change it
-whenever `style.css` or `main.js` changes (any fresh value works; the current one is the first 7 hex characters of
-`cat assets/css/style.css assets/js/main.js | sha256sum`).
-
-## Deploying (Cloudflare Pages)
-
-Connect this repo in Cloudflare Pages. Use framework preset **None** and leave the build command **empty**. Set the output directory to `/`.
-If your project ends up with a different `*.pages.dev` address (or a custom domain), replace `https://synthalorian.pages.dev/`
-in `index.html` (canonical, Open Graph, JSON-LD), `robots.txt`, and `sitemap.xml`.
-
-## Font and art
-
-- **3270 Nerd Font** from the [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) v3.5.1 release, subset to Latin and punctuation and
-  converted to WOFF2 (`3270-nerd-font.woff2`, ~12 KB). It loads with `font-display: optional` plus a preload, so text never reflows when
-  it arrives. Its license ships next to it in `assets/fonts/3270-NERD-FONT-LICENSE.txt`.
+Motion is limited to a short fade-and-rise when sections scroll into view and the knight's stepped sprite animation. Both are off under `prefers-reduced-motion` (the knight shows a still frame). `assets/js/main.js` adds the reveal only when the `js` class is set in `<head>`, which never happens for reduced motion.

@@ -1,0 +1,25 @@
+/* Blackshield palette kit. Four colours only; every other tone is a mix of these four. */
+:root {
+  --bs-black: #101014;
+  --bs-blood: #C1121F;
+  --bs-steel: #8F959C;
+  --bs-bone: #D8D3C8;
+
+  /* aliases used across the sites */
+  --bg: var(--bs-black);
+  --blood: var(--bs-blood);
+  --steel: var(--bs-steel);
+  --bone: var(--bs-bone);
+
+  /* derived tones (mixes of the four, no new hues) */
+  --surface: color-mix(in srgb, var(--bs-bone) 5%, var(--bs-black));
+  --surface-2: color-mix(in srgb, var(--bs-bone) 9%, var(--bs-black));
+  --line: color-mix(in srgb, var(--bs-steel) 35%, var(--bs-black));
+  --muted: var(--bs-steel);
+  --blood-hover: color-mix(in srgb, var(--bs-blood) 80%, var(--bs-bone));
+  --focus: var(--bs-bone);
+
+  --font-display: "Cinzel", "Trajan Pro", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
