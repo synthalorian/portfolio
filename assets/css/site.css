@@ -497,3 +497,9 @@ body{--k-gap:24px}
   .mods-brief,.panel{padding:22px}
   .lang-bars li{grid-template-columns:5.2rem minmax(0,1fr) 1.8rem}
 }
+
+/* dock: the 1px top border put the 64px sprite on a half pixel; 1px of top padding puts it on a whole pixel */
+.sprite-dock{padding-top:1px}
+
+/* 404 on wide screens: the sun sits to the right of the message card instead of behind it */
+@media (min-width:900px){.hero.lost .sun{left:74%}}

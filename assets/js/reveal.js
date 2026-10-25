@@ -13,9 +13,13 @@
       if (!e.isIntersecting) return;
       io.unobserve(e.target);
       e.target.classList.add("rv-in");
-      var done = function () { e.target.classList.remove("rv", "rv-in"); e.target.style.removeProperty("--rv-i"); };
-      e.target.addEventListener("transitionend", done, {once: true});
-      setTimeout(done, 1400);
+      var el = e.target;
+      var done = function () { el.removeEventListener("transitionend", onEnd); el.classList.remove("rv", "rv-in"); el.style.removeProperty("--rv-i"); };
+      // transitionend bubbles: only the element's own transform transition (the longest one) may end the reveal,
+      // not a child's hover or reveal transition, which used to cut the fade short.
+      var onEnd = function (ev) { if (ev.target === el && ev.propertyName === "transform") done(); };
+      el.addEventListener("transitionend", onEnd);
+      setTimeout(done, 1600);
     });
   }, {rootMargin: "0px 0px -6% 0px", threshold: 0.06});
   items.forEach(function (el, n) {
