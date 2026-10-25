@@ -1,0 +1,37 @@
+/* Motion. Everything animated is inside prefers-reduced-motion:no-preference, so with reduced motion the page is static and fully visible;
+   without JS nothing is hidden (reveal.js adds .rv only to below-the-fold items). */
+@media (prefers-reduced-motion: no-preference) {
+  .rv{opacity:0;transform:translateY(22px);will-change:opacity,transform}
+  .rv.rv-in{opacity:1;transform:none;transition:opacity .6s ease,transform .65s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--rv-i,0)*80ms)}
+  .header nav a:hover{box-shadow:0 0 16px -5px #3ef0ff}
+  .cards>.card{transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s,border-color .25s}
+  .cards>.card:hover{transform:translateY(-5px)}
+  .floor-grid{bottom:-64px;animation:grid-recede 2.6s linear infinite}
+  .footer-floor{animation:footer-recede 3.2s linear infinite}
+  .sun{-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:repeat-y;mask-repeat:repeat-y;
+    animation:sun-pulse 6s ease-in-out infinite alternate,sun-slices 9s linear infinite,sun-breathe 6s ease-in-out infinite alternate}
+  .horizon::before{animation:haze 7s ease-in-out infinite alternate}
+  .horizon::after{content:"";position:absolute;left:50%;bottom:0;width:min(46vw,640px);height:clamp(80px,12vw,190px);margin-left:calc(min(46vw,640px)/-2);pointer-events:none;
+    background:radial-gradient(ellipse 50% 100% at 50% 100%,rgba(224,204,255,.42),rgba(181,123,255,.18) 45%,transparent 72%);animation:sun-glow 5s ease-in-out infinite alternate}
+  .stars{animation:twinkle 5s ease-in-out infinite alternate,star-drift 36s ease-in-out infinite alternate}
+  .stars::after{animation:twinkle 3.4s ease-in-out infinite alternate-reverse}
+  body.theme-home h1{background-size:200% 100%;animation:title-shift 11s ease-in-out infinite alternate}
+  h2::after,.eyebrow::before{animation:neon-bar 3.6s ease-in-out infinite alternate}
+  .button{transition:transform .2s,box-shadow .25s,filter .25s}
+  .button:hover{filter:brightness(1.12);box-shadow:0 0 22px -4px rgba(181,123,255,.85)}
+  .portrait-frame{animation:float 7s ease-in-out infinite alternate,frame-glow 5s ease-in-out infinite alternate}
+  @keyframes grid-recede{to{transform:translateY(-64px)}}
+  @keyframes footer-recede{to{background-position:0 -44px,0 0}}
+  @keyframes sun-slices{to{-webkit-mask-position:0 var(--sun-d);mask-position:0 var(--sun-d)}}
+  @keyframes sun-breathe{from{transform:scale(1)}to{transform:scale(1.025)}}
+  @keyframes haze{from{opacity:.72}to{opacity:1}}
+  @keyframes sun-glow{from{opacity:.25}to{opacity:.85}}
+  @keyframes star-drift{from{transform:translate3d(-6px,0,0)}to{transform:translate3d(8px,3px,0)}}
+  @keyframes title-shift{to{background-position:100% 0}}
+  @keyframes neon-bar{from{opacity:.65}to{opacity:1}}
+  @keyframes frame-glow{from{box-shadow:0 0 0 1px rgba(62,240,255,.18),0 0 26px rgba(157,77,255,.35)}to{box-shadow:0 0 0 1px rgba(62,240,255,.4),0 0 44px rgba(157,77,255,.65)}}
+}
+@media (prefers-reduced-motion: reduce) {
+  .rv{opacity:1!important;transform:none!important}
+  .floor-grid,.footer-floor,.sun,.horizon::before,.horizon::after,.stars,.stars::after,.crt::after,.portrait-frame,.hero-copy>*,.portrait,.strip-track{animation:none!important}
+}
